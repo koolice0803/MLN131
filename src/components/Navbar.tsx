@@ -14,17 +14,42 @@ import {
 } from 'lucide-react'
 
 const navigationItems = [
-  { path: '/', label: 'Trang chủ', icon: Home, description: 'Giới thiệu tổng quan' },
-  { path: '/timeline', label: 'Dòng thời gian', icon: Clock, description: 'Các sự kiện lịch sử' },
-  { path: '/analysis', label: 'Phân tích', icon: BarChart3, description: 'So sánh quan điểm' },
-  { path: '/conclusion', label: 'Kết luận', icon: FileText, description: 'Nhận định cuối cùng' },
-  { path: '/quiz', label: 'Ôn tập', icon: Star, description: 'Câu hỏi kiểm tra' },
-  { path: '/documents', label: 'Tài liệu', icon: BookOpen, description: 'Nguồn tham khảo' }
-]
+  {
+    path: "/",
+    label: "Trang chủ",
+    icon: Home,
+    description: "Giới thiệu tổng quan",
+  },
+  // { path: '/timeline', label: 'Dòng thời gian', icon: Clock, description: 'Các sự kiện lịch sử' },
+  {
+    path: "/analysis",
+    label: "Phân tích",
+    icon: BarChart3,
+    description: "Phân tích chi tiết",
+  },
+  {
+    path: "/conclusion",
+    label: "Kết luận",
+    icon: FileText,
+    description: "Nhận định cuối cùng",
+  },
+  {
+    path: "/quiz",
+    label: "Ôn tập",
+    icon: Star,
+    description: "Câu hỏi kiểm tra",
+  },
+  {
+    path: "/documents",
+    label: "Tài liệu",
+    icon: BookOpen,
+    description: "Nguồn tham khảo",
+  },
+];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const location = useLocation()
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <motion.nav
@@ -36,39 +61,36 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <Flag className="w-8 h-8 text-red-600 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 fill-red-600" />
                 <Star className="w-3 h-3 text-yellow-500 absolute top-1.5 right-2.5 group-hover:rotate-45 group-hover:scale-125 transition-all duration-300 fill-yellow-500" />
               </div>
               <div>
-                <div className="text-xl font-bold text-gradient">Tư tưởng Hồ Chí Minh</div>
-                <div className="text-xs text-gray-600 group-hover:text-blue-600 transition-colors duration-300">Lịch sử Đảng Cộng sản Việt Nam</div>
+                <div className="text-xl font-bold text-gradient">
+                  Tư tưởng Hồ Chí Minh
+                </div>
+                <div className="text-xs text-gray-600 group-hover:text-blue-600 transition-colors duration-300">
+                  Lịch sử Đảng Cộng sản Việt Nam
+                </div>
               </div>
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-1 gap-2">
             {navigationItems.map((item) => {
-              const Icon = item.icon
-              const isActive = location.pathname === item.path
+              const Icon = item.icon;
+              const isActive = location.pathname === item.path;
 
               return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className="relative group"
-                >
+                <Link key={item.path} to={item.path} className="relative group">
                   <motion.div
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
                       isActive
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                        : 'text-gray-700 hover:bg-gray-100'
+                        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
+                        : "text-gray-700 hover:bg-gray-100"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -85,7 +107,7 @@ const Navbar = () => {
                     </div>
                   </div>
                 </Link>
-              )
+              );
             })}
           </div>
 
@@ -101,7 +123,11 @@ const Navbar = () => {
               animate={{ rotate: isOpen ? 180 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </motion.div>
           </motion.button>
         </div>
@@ -112,14 +138,14 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t border-gray-200"
           >
             <div className="px-4 py-2 space-y-1">
               {navigationItems.map((item) => {
-                const Icon = item.icon
-                const isActive = location.pathname === item.path
+                const Icon = item.icon;
+                const isActive = location.pathname === item.path;
 
                 return (
                   <Link
@@ -128,26 +154,30 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                       isActive
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                        : 'text-gray-700 hover:bg-gray-100'
+                        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+                        : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
                     <div>
                       <div className="font-medium">{item.label}</div>
-                      <div className={`text-sm ${isActive ? 'text-blue-100' : 'text-gray-500'}`}>
+                      <div
+                        className={`text-sm ${
+                          isActive ? "text-blue-100" : "text-gray-500"
+                        }`}
+                      >
                         {item.description}
                       </div>
                     </div>
                   </Link>
-                )
+                );
               })}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
-  )
-}
+  );
+};
 
 export default Navbar

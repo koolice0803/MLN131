@@ -1,10 +1,10 @@
 /* Custom animations and styles */
 .vietnam-flag-colors {
-  background: linear-gradient(45deg, #da020e 0%, #ffcd00 50%, #da020e 100%);
+  background: linear-gradient(45deg, #f2a297 0%, #ffcb66 50%, #f2a297 100%);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #7e4f10 0%, #3a5f45 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -16,7 +16,7 @@
 
 /* Special class for Vietnamese title with better font support */
 .vietnamese-title {
-  font-family: 'Roboto', 'Nunito', 'Open Sans', 'Segoe UI', Arial, sans-serif !important;
+  font-family: 'Crimson Pro', 'Nunito', 'Open Sans', 'Segoe UI', Arial, sans-serif !important;
   font-weight: 700;
   letter-spacing: -0.02em;
   text-rendering: optimizeLegibility;
@@ -26,8 +26,8 @@
 
 /* Alternative solid color version for testing */
 .text-gradient-solid {
-  color: #667eea;
-  font-family: 'Roboto', 'Nunito', 'Open Sans', 'Segoe UI', Arial, sans-serif !important;
+  color: #7e4f10;
+  font-family: 'Crimson Pro', 'Nunito', 'Open Sans', 'Segoe UI', Arial, sans-serif !important;
   font-weight: 700;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -35,7 +35,7 @@
 }
 
 .card-shadow {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 6px 6px -3px rgba(0, 0, 0, 0.04);
 }
 
 .hover-lift {
@@ -44,7 +44,7 @@
 
 .hover-lift:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 30px -6px rgba(0, 0, 0, 0.25);
 }
 
 /* Timeline styles */
@@ -59,7 +59,7 @@
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(180deg, #7e4f10 0%, #3a5f45 100%);
   transform: translateX(-50%);
 }
 
@@ -69,7 +69,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #7e4f10 0%, #3a5f45 100%);
   border: 4px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -87,7 +87,7 @@
 
 /* Search highlight */
 .search-highlight {
-  background: linear-gradient(120deg, #fbbf24 0%, #f59e0b 100%);
+  background: linear-gradient(120deg, #ffcb66 0%, #add6b8 100%);
   color: #1f2937;
   padding: 2px 4px;
   border-radius: 4px;
@@ -96,7 +96,7 @@
 
 /* Animated background */
 .animated-bg {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ffcb66, #f2a297, #a5c4fb, #add6b8);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
@@ -155,7 +155,7 @@
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
-  50% { border-color: #667eea; }
+  50% { border-color: #7e4f10; }
 }
 
 /* Slide in animations */
@@ -191,8 +191,8 @@
 
 /* Hero background with parallax effect */
 .hero-background {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%),
-              url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23667eea" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></svg>');
+  background: linear-gradient(135deg, #f8f3ed 0%, #f8f3ed 100%),
+              url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%237e4f10" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></svg>');
   background-attachment: fixed;
   background-size: 60px 60px, cover;
   animation: backgroundMove 20s linear infinite;
