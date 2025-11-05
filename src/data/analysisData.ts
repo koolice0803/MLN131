@@ -1,108 +1,158 @@
-import type { AnalysisPoint } from '../types';
+import type { AnalysisPoint } from "../types";
 
 export const analysisData: AnalysisPoint[] = [
   {
-    id: 'national-independence-thought',
-    category: 'Tư tưởng độc lập dân tộc',
-    title: 'Nội dung và đặc điểm',
+    id: "viewpoint1-1",
+    category: "1.1 Bản chất và nguồn gốc của tôn giáo",
+    title: "",
+    detail:
+      "Tôn giáo là một hình thái ý thức xã hội phản ánh hư ảo hiện thực khách quan, đồng thời là hiện tượng xã hội – văn hóa do con người sáng tạo ra. Nguồn gốc gồm tự nhiên, kinh tế – xã hội, nhận thức và tâm lý",
     content: [
-      'Khát vọng độc lập: Giải phóng dân tộc khỏi ách thống trị thực dân, phong kiến',
-      'Chủ quyền quốc gia: Xây dựng nhà nước độc lập, tự chủ',
-      'Đại đoàn kết: Đoàn kết toàn dân tộc trong sự nghiệp giải phóng',
-      'Tự lực cánh sinh: Dựa vào sức mạnh của nhân dân để giành độc lập'
+      "Tôn giáo phản ánh hiện thực dưới dạng siêu nhiên.",
+      "Con người sáng tạo tôn giáo để thể hiện ước vọng, niềm tin của mình.",
+      "Tôn giáo tồn tại lâu dài cùng lịch sử xã hội loài người.",
+      "Các yếu tố tự nhiên, xã hội và tâm lý góp phần hình thành tín ngưỡng.",
     ],
     evidence: [
-      'Tuyên ngôn độc lập 2/9/1945: "Tất cả mọi người đều sinh ra có quyền bình đẳng"',
-      'Thành lập Việt Minh 1941: Đoàn kết toàn dân chống thực dân, phát xít',
-      'Chiến thắng Điện Biên Phủ 1954: Khẳng định ý chí độc lập của dân tộc',
-      'Di chúc Hồ Chí Minh: "Độc lập dân tộc và chủ nghĩa xã hội là hai mục tiêu chiến lược"'
-    ]
+      "C.Mác: “Tôn giáo là tiếng thở dài của sinh vật bị áp bức…” – thể hiện sự phản ánh của tôn giáo trước hiện thực xã hội.",
+      "Giáo trình Chủ nghĩa xã hội khoa học (Bộ GD&ĐT, 2021) khẳng định nguồn gốc tự nhiên – xã hội – nhận thức của tôn giáo",
+      "Lênin nhấn mạnh: tôn giáo chỉ mất đi khi điều kiện xã hội sinh ra nó không còn.",
+    ],
   },
   {
-    id: 'socialist-thought',
-    category: 'Tư tưởng chủ nghĩa xã hội',
-    title: 'Nội dung và đặc điểm Việt Nam',
+    id: "viewpoint1-2",
+    category: "1.2 Tính chất của tôn giáo",
+    title: "",
+    detail:
+      "Tôn giáo mang tính lịch sử, quần chúng và chính trị – nó gắn bó với nhân dân, đồng thời có thể bị lợi dụng cho mục tiêu chính trị.",
     content: [
-      'Công bằng xã hội: Xóa bỏ chế độ bóc lột, xây dựng xã hội bình đẳng',
-      'Dân chủ nhân dân: Nhân dân làm chủ đất nước',
-      'Phát triển toàn diện: Kinh tế, chính trị, văn hóa, xã hội',
-      'Con người mới: Xây dựng con người xã hội chủ nghĩa có đạo đức'
+      "Tôn giáo biến đổi theo thời kỳ lịch sử.",
+      "Tôn giáo có sức ảnh hưởng rộng trong nhân dân.",
+      "Tôn giáo có thể trở thành công cụ của giai cấp thống trị nếu bị lợi dụng.",
     ],
     evidence: [
-      'Cương lĩnh Đảng 1930: Kết hợp cách mạng dân tộc với cách mạng xã hội chủ nghĩa',
-      'Cải cách ruộng đất 1953-1956: "Ruộng đất về tay người cày"',
-      'Hiến pháp 1946: Quy định quyền làm chủ của nhân dân',
-      'Xây dựng chủ nghĩa xã hội ở miền Bắc 1954-1975'
-    ]
+      "Trong xã hội phong kiến, tôn giáo thường gắn với quyền lực chính trị.",
+      "Ở Việt Nam, các tôn giáo như Phật giáo và Thiên Chúa giáo từng giữ vai trò khác nhau trong từng thời kỳ, phản ánh tính lịch sử và chính trị của tôn giáo.",
+      "Các tài liệu giảng dạy của Bộ GD&ĐT nêu rõ tính quần chúng là đặc điểm cơ bản của tôn giáo trong xã hội quá độ.",
+    ],
   },
   {
-    id: 'combination-analysis',
-    category: 'Sự kết hợp hài hòa',
-    title: 'Độc lập dân tộc gắn với chủ nghĩa xã hội',
+    id: "viewpoint1-3",
+    category: "1.3 Nguyên tắc giải quyết vấn đề tôn giáo",
+    title: "",
+    detail:
+      "Giải quyết tôn giáo phải tôn trọng tự do tín ngưỡng và không tín ngưỡng, khắc phục ảnh hưởng tiêu cực gắn với cải tạo xã hội cũ, và phân biệt tôn giáo chân chính với việc lợi dụng tôn giáo",
     content: [
-      'Thống nhất mục tiêu: Độc lập dân tộc là tiền đề, chủ nghĩa xã hội là định hướng',
-      'Bổ sung lẫn nhau: Độc lập để xây dựng xã hội công bằng, xã hội công bằng để bảo vệ độc lập',
-      'Phù hợp điều kiện: Kết hợp phù hợp với điều kiện lịch sử cụ thể của Việt Nam',
-      'Tính sáng tạo: Vận dụng sáng tạo chủ nghĩa Mác-Lênin vào thực tiễn Việt Nam'
+      "Quyền tự do tôn giáo là quyền dân chủ cơ bản của nhân dân.",
+      "Cải tạo xã hội là điều kiện căn bản để xóa bỏ nguồn gốc tiêu cực của tôn giáo.",
+      "Phải nhìn nhận tôn giáo theo quan điểm lịch sử – cụ thể.",
     ],
     evidence: [
-      'Cương lĩnh Đảng 1930: "Làm cách mạng dân tộc dân chủ nhân dân"',
-      'Tuyên ngôn độc lập 1945: Kết hợp độc lập với dân chủ',
-      'Đường lối kháng chiến kiến quốc: Vừa đánh giặc, vừa xây dựng đất nước',
-      'Di chúc Hồ Chí Minh: "Hai mục tiêu chiến lược của cách mạng Việt Nam"'
-    ]
+      "Hiến pháp Việt Nam (2013, Điều 24) và Luật Tín ngưỡng, Tôn giáo (2016) thể chế hóa nguyên tắc Mác – Lênin về quyền tự do tín ngưỡng.",
+      "Tài liệu giảng dạy của Học viện Chính trị quốc gia Hồ Chí Minh (2018) nêu “phân biệt tín ngưỡng, tôn giáo và lợi dụng tôn giáo”.",
+    ],
   },
   {
-    id: 'historical-significance',
-    category: 'Ý nghĩa lịch sử',
-    title: 'Tác động và ảnh hưởng',
+    id: "viewpoint2-1",
+    category: "2.1 Cơ cấu tôn giáo và tổ chức hoạt động",
+    title: "",
+    detail:
+      "Việt Nam có 13 tôn giáo được công nhận, hơn 40 tổ chức tôn giáo hợp pháp, với khoảng 24 triệu tín đồ, 95.000 chức sắc, 200.000 chức việc và hơn 23.250 cơ sở thờ tự",
     content: [
-      'Định hướng cách mạng: Chỉ ra con đường cách mạng đúng đắn cho Việt Nam',
-      'Mô hình cho thế giới: Kinh nghiệm quý báu cho các dân tộc bị áp bức',
-      'Nền tảng xây dựng: Cơ sở tư tưởng xây dựng đất nước',
-      'Di sản tinh thần: Tài sản vô giá của dân tộc Việt Nam'
+      "Việt Nam là quốc gia đa tôn giáo nhưng ổn định.",
+      "Mọi tôn giáo được công nhận hoạt động theo pháp luật.",
+      "Hệ thống tổ chức tôn giáo ngày càng hoàn thiện.",
     ],
     evidence: [
-      'Thành công cách mạng Tháng Tám 1945',
-      'Chiến thắng trong hai cuộc kháng chiến',
-      'Xây dựng thành công chủ nghĩa xã hội ở Việt Nam',
-      'Ảnh hưởng tích cực đến phong trào giải phóng dân tộc thế giới',
-      'Tiếp tục là kim chỉ nam trong thời kỳ đổi mới'
-    ]
+      "Ban Tôn giáo Chính phủ (2017) công bố thống kê chi tiết.",
+      "Việt Nam chưa từng xảy ra chiến tranh tôn giáo – minh chứng cho chính sách đoàn kết dân tộc.",
+      "Các tổ chức tôn giáo như Giáo hội Phật giáo Việt Nam (1981) hay Hội thánh Tin Lành Việt Nam (2001) đều hoạt động hợp pháp.",
+    ],
   },
   {
-    id: 'practical-application',
-    category: 'Vận dụng thực tiễn',
-    title: 'Áp dụng trong các giai đoạn lịch sử',
+    id: "viewpoint2-2",
+    category: "2.2 Đặc điểm văn hóa – xã hội của các tôn giáo",
+    title: "",
+    detail:
+      "Tôn giáo Việt Nam đa dạng, đan xen và chung sống hòa bình, chịu ảnh hưởng sâu đậm văn hóa dân tộc, hướng đến giá trị “tốt đời, đẹp đạo”",
     content: [
-      'Giai đoạn giành độc lập: Lãnh đạo cách mạng Tháng Tám và kháng chiến',
-      'Giai đoạn xây dựng: Cải cách ruộng đất và công nghiệp hóa',
-      'Giai đoạn thống nhất: Giải phóng miền Nam và thống nhất đất nước',
-      'Giai đoạn đổi mới: Tiếp tục phát triển trong thời kỳ hội nhập'
+      "Mỗi tôn giáo mang dấu ấn văn hóa Việt Nam.",
+      "Các tôn giáo có truyền thống khoan dung, hòa hợp.",
+      "Niềm tin tôn giáo được thể hiện qua lối sống đạo đức, nhân văn.",
     ],
     evidence: [
-      'Cách mạng Tháng Tám 1945: Giành chính quyền trong cả nước',
-      'Kháng chiến chống Pháp 1946-1954: Bảo vệ độc lập dân tộc',
-      'Xây dựng chủ nghĩa xã hội ở miền Bắc 1954-1975',
-      'Cuộc chiến tranh bảo vệ Tổ quốc và làm nghĩa vụ quốc tế',
-      'Đổi mới từ 1986: Phát triển kinh tế thị trường định hướng xã hội chủ nghĩa'
-    ]
+      "Phật giáo gắn bó với lịch sử dân tộc, từng là quốc giáo thời Lý – Trần.",
+      "Thiên Chúa giáo đồng hành trong công cuộc kháng chiến chống Pháp, Mỹ.",
+      "Cao Đài và Hòa Hảo xuất hiện trong thế kỷ XX, mang bản sắc Việt hóa rõ nét.",
+    ],
   },
   {
-    id: 'contemporary-relevance',
-    category: 'Ý nghĩa thời đại',
-    title: 'Giá trị trong giai đoạn hiện tại',
+    id: "viewpoint2-3",
+    category: "2.3 Thành phần tín đồ và vai trò của chức sắc",
+    title: "",
+    detail:
+      "Tín đồ các tôn giáo chủ yếu là nhân dân lao động, có lòng yêu nước, tinh thần dân tộc; chức sắc có uy tín, ảnh hưởng lớn, nhiều người tham gia hoạt động xã hội, từ thiện",
     content: [
-      'Kim chỉ nam: Định hướng phát triển đất nước trong thời kỳ mới',
-      'Bản sắc dân tộc: Giữ gìn và phát huy bản sắc văn hóa dân tộc',
-      'Hội nhập quốc tế: Chủ động hội nhập trên cơ sở độc lập, tự chủ',
-      'Phát triển bền vững: Xây dựng xã hội công bằng, dân chủ, văn minh'
+      "Tôn giáo Việt Nam hướng con người đến lối sống đạo đức.",
+      "Các chức sắc là cầu nối quan trọng giữa tôn giáo và xã hội.",
+      "Cộng đồng tín đồ tích cực trong công cuộc xây dựng đất nước.",
     ],
     evidence: [
-      'Hiến pháp 2013: Khẳng định mục tiêu xây dựng nhà nước xã hội chủ nghĩa',
-      'Nghị quyết Đại hội XIII: Phát triển nhanh và bền vững',
-      'Chính sách đối ngoại: Độc lập, tự chủ, đa phương hóa, đa dạng hóa',
-      'Xây dựng Đảng: Trong sạch, vững mạnh theo tư tưởng Hồ Chí Minh'
-    ]
-  }
+      "Các vị Hòa thượng, Linh mục, Chánh trị sự tham gia Mặt trận Tổ quốc và Hội đồng Nhân dân các cấp.",
+      "Nhiều tổ chức tôn giáo làm công tác từ thiện: nuôi dạy trẻ mồ côi, chăm sóc người già, bệnh nhân phong…",
+      "Đảng ta khẳng định: “Đồng bào tôn giáo là bộ phận của khối đại đoàn kết dân tộc.”",
+    ],
+  },
+  {
+    id: "viewpoint3-1",
+    category: "3.1 Chính sách của Đảng và Nhà nước về tôn giáo",
+    title: "",
+    detail:
+      "Tôn giáo được xác định là nhu cầu tinh thần của nhân dân, tồn tại lâu dài cùng dân tộc; chính sách đại đoàn kết toàn dân là nền tảng; công tác tôn giáo là trách nhiệm của toàn hệ thống chính trị",
+    content: [
+      "Tôn trọng và bảo đảm quyền tự do tín ngưỡng.",
+      "Phát huy giá trị văn hóa, đạo đức tôn giáo.",
+      "Củng cố khối đại đoàn kết dân tộc.",
+    ],
+    evidence: [
+      "Luật Tín ngưỡng, Tôn giáo 2016 cụ thể hóa quyền tự do tôn giáo.",
+      "Ban Tôn giáo Chính phủ thường xuyên tổ chức hội nghị đối thoại, gặp gỡ chức sắc.",
+      "Câu nói “Tốt đời, đẹp đạo” trở thành phương châm của chính sách tôn giáo Việt Nam.",
+    ],
+  },
+  {
+    id: "viewpoint3-2",
+    category: "3.2 Quan hệ dân tộc – tôn giáo ở Việt Nam",
+    title: "",
+    detail:
+      "Quan hệ giữa dân tộc và tôn giáo hài hòa, ổn định, là biểu hiện của khối đại đoàn kết toàn dân; các tôn giáo “đồng hành cùng dân tộc, gắn đạo với đời”",
+    content: [
+      "Dân tộc và tôn giáo thống nhất trong mục tiêu xây dựng đất nước.",
+      "Tín ngưỡng dân gian là nền tảng đoàn kết văn hóa – tinh thần.",
+      "Cảnh giác với các hiện tượng lợi dụng tôn giáo.",
+    ],
+    evidence: [
+      "Tín ngưỡng thờ cúng Hùng Vương (cấp quốc gia), thờ tổ tiên (gia đình), thờ Thành hoàng làng (làng xã) là biểu hiện gắn bó dân tộc – tôn giáo.",
+      "Các vụ việc “Tin Lành Đề Ga”, “Hà Mòn” ở Tây Nguyên là bài học cảnh giác với âm mưu chia rẽ đoàn kết.",
+      "Đảng ta xác định: “Xây dựng, củng cố khối đại đoàn kết toàn dân tộc và đoàn kết tôn giáo là vấn đề chiến lược, cơ bản, lâu dài và cấp bách.",
+    ],
+  },
+  {
+    id: "viewpoint3-3",
+    category:
+      "3.3 Định hướng và nguyên tắc giải quyết vấn đề tôn giáo hiện nay",
+    title: "",
+    detail:
+      "Giải quyết tôn giáo dựa trên vấn đề dân tộc và nhân quyền, bảo đảm độc lập – thống nhất đất nước, tăng cường an ninh – quốc phòng, đồng thời phát huy giá trị đạo đức tôn giáo",
+    content: [
+      "Kết hợp chính trị, pháp luật và vận động quần chúng.",
+      "Giữ vững chủ quyền, ngăn chặn lợi dụng tôn giáo.",
+      "Khuyến khích chức sắc, tín đồ “sống tốt đời, đẹp đạo”.",
+    ],
+    evidence: [
+      "Luật Tín ngưỡng, Tôn giáo 2016 quy định “không được lợi dụng tôn giáo để vi phạm pháp luật”.",
+      "Bộ Công an phối hợp với Mặt trận Tổ quốc, Giáo hội thực hiện các chương trình “An ninh tôn giáo, an ninh vùng dân tộc”.",
+      "Các tổ chức Phật giáo, Công giáo, Cao Đài, Hòa Hảo tham gia các hoạt động xã hội – từ thiện quy mô lớn (chống dịch COVID-19, thiên tai miền Trung…).",
+    ],
+  },
 ];

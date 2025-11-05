@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  Home,
-  Clock,
-  BarChart3,
-  FileText,
+  BookMarked,
   BookOpen,
+  FileText,
+  Home,
   Menu,
-  X,
   Star,
-  Flag
-} from 'lucide-react'
+  X,
+} from "lucide-react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navigationItems = [
   {
@@ -24,7 +22,7 @@ const navigationItems = [
   {
     path: "/analysis",
     label: "Phân tích",
-    icon: BarChart3,
+    icon: BookMarked,
     description: "Phân tích chi tiết",
   },
   {
@@ -53,7 +51,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-orange-50 border-2 border-b-orange-200 backdrop-blur-lg border-b border-gray-200/50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
@@ -64,15 +62,15 @@ const Navbar = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                <Flag className="w-8 h-8 text-red-600 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 fill-red-600" />
-                <Star className="w-3 h-3 text-yellow-500 absolute top-1.5 right-2.5 group-hover:rotate-45 group-hover:scale-125 transition-all duration-300 fill-yellow-500" />
+                <BookMarked className="w-8 h-8 text-lime-900 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 fill-red-500" />
+                <Star className="w-3 h-3 text-yellow-500 absolute top-1.5 right-2.5 group-hover:rotate-45 group-hover:scale-125 transition-all duration-300 fill-yellow-200" />
               </div>
               <div>
                 <div className="text-xl font-bold text-gradient">
-                  Tư tưởng Hồ Chí Minh
+                  MLN131 Group 8
                 </div>
-                <div className="text-xs text-gray-600 group-hover:text-blue-600 transition-colors duration-300">
-                  Lịch sử Đảng Cộng sản Việt Nam
+                <div className="text-xs text-gray-600 group-hover:text-lime-600 transition-colors duration-300">
+                  Tôn giáo trong thời kì quá độ lên chủ nghĩa xã hội
                 </div>
               </div>
             </Link>
@@ -87,10 +85,10 @@ const Navbar = () => {
               return (
                 <Link key={item.path} to={item.path} className="relative group">
                   <motion.div
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                    className={`flex items-center space-x-2 px-4 py-2 rounded transition-all duration-300 ${
                       isActive
-                        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
-                        : "text-gray-700 hover:bg-gray-100"
+                        ? "bg-gradient-to-r from-orange-500 to-lime-600 text-white shadow-lg"
+                        : "text-orange-800 hover:bg-gray-100"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -180,4 +178,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;

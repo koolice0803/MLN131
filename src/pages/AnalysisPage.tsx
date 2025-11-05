@@ -1,41 +1,73 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  Scale,
+  AlertCircle,
+  Book,
+  Bookmark,
+  BookMarked,
   ChevronDown,
   ChevronUp,
+  ClipboardClock,
   FileText,
-  BarChart3,
-  Shield,
-  Users,
   Gavel,
+  Shield,
+  Sparkle,
   TrendingUp,
-  CheckCircle,
-  XCircle,
-  AlertCircle
-} from 'lucide-react'
-import { analysisData } from '../data/analysisData'
+  Users,
+  XCircle
+} from "lucide-react";
+import { useState } from "react";
+import { analysisData } from "../data/analysisData";
 
 const AnalysisPage = () => {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null)
-  const [selectedViewpoint, setSelectedViewpoint] = useState<'independence' | 'socialism' | 'comparison'>('comparison')
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const [selectedViewpoint, setSelectedViewpoint] =
+    useState<string>("viewpoint1");
 
   const viewpoints = [
-    { id: 'independence', label: 'Tư tưởng độc lập dân tộc', color: 'from-red-500 to-red-600', icon: XCircle },
-    { id: 'socialism', label: 'Tư tưởng chủ nghĩa xã hội', color: 'from-green-500 to-green-600', icon: CheckCircle },
-    { id: 'comparison', label: 'Phân tích toàn diện', color: 'from-blue-500 to-blue-600', icon: Scale }
-  ]
+    {
+      id: "viewpoint1",
+      label: "1. Quan điểm Mác – Lênin về tôn giáo",
+      color: "from-orange-500 to-yellow-400",
+      icon: Book,
+    },
+    {
+      id: "viewpoint2",
+      label: "2. Tôn giáo ở Việt Nam hiện nay",
+      color: "from-lime-600 to-green-500",
+      icon: Book,
+    },
+    {
+      id: "viewpoint3",
+      label:
+        "3. Chính sách & quan hệ dân tộc – tôn giáo trong thời kỳ quá độ lên CNXH",
+      color: "from-red-600 to-purple-500",
+      icon: Book,
+    },
+    {
+      id: "all",
+      label: "Hiển thị tất cả",
+      color: "from-blue-600 to-aqua-500",
+      icon: Book,
+    },
+  ];
 
   const getAnalysisIcon = (category: string) => {
-    if (category.includes('độc lập')) return Gavel
-    if (category.includes('xã hội')) return Users
-    if (category.includes('kết hợp')) return Shield
-    if (category.includes('thực tiễn')) return TrendingUp
-    return BarChart3
-  }
+    if (category.includes("độc lập")) return Gavel;
+    if (category.includes("xã hội")) return Users;
+    if (category.includes("kết hợp")) return Shield;
+    if (category.includes("thực tiễn")) return TrendingUp;
+    return Bookmark;
+  };
 
-  const independenceData = analysisData.filter(item => item.id === 'national-independence-thought')
-  const socialismData = analysisData.filter(item => item.id === 'socialist-thought')
+  const viewpoint1Data = analysisData.filter((item) =>
+    item.id.startsWith("viewpoint1")
+  );
+  const viewpoint2Data = analysisData.filter((item) =>
+    item.id.startsWith("viewpoint2")
+  );
+  const viewpoint3Data = analysisData.filter((item) =>
+    item.id.startsWith("viewpoint3")
+  );
   // Additional analysis data for future expansion
   // const otherAnalysis = analysisData.filter(item =>
   //   !['national-independence-thought', 'socialist-thought'].includes(item.id)
@@ -43,19 +75,21 @@ const AnalysisPage = () => {
 
   const renderViewpointContent = () => {
     switch (selectedViewpoint) {
-      case 'independence':
-        return independenceData
-      case 'socialism':
-        return socialismData
-      case 'comparison':
-        return analysisData
+      case "viewpoint1":
+        return viewpoint1Data;
+      case "viewpoint2":
+        return viewpoint2Data;
+      case "viewpoint3":
+        return viewpoint3Data;
+      case "all":
+        return analysisData;
       default:
-        return analysisData
+        return null;
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen pt-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="min-h-screen pt-16 bg-gradient-to-br from-yellow-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <motion.div
@@ -64,16 +98,18 @@ const AnalysisPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
-            <BarChart3 className="w-4 h-4 mr-2" />
-            Phân tích tư tưởng
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-800 text-sm font-medium mb-6">
+            <BookMarked className="w-4 h-4 mr-2" />
+            Phân tích các nội dung
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            <span className="text-gradient">Tư tưởng Hồ Chí Minh</span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-gradient">
+              Tôn giáo trong thời kì quá độ lên chủ nghĩa xã hội
+            </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Phân tích sâu sắc về tư tưởng độc lập dân tộc và chủ nghĩa xã hội
-            của Chủ tịch Hồ Chí Minh.
+            Phân tích sâu sắc về tôn giáo trong thời kì quá độ lên chủ nghĩa xã
+            hội.
           </p>
         </motion.div>
 
@@ -85,18 +121,20 @@ const AnalysisPage = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Chọn góc nhìn phân tích</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Chọn nội dung
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {viewpoints.map((viewpoint) => {
-                const Icon = viewpoint.icon
+                const Icon = viewpoint.icon;
                 return (
                   <button
                     key={viewpoint.id}
-                    onClick={() => setSelectedViewpoint(viewpoint.id as any)}
+                    onClick={() => setSelectedViewpoint(viewpoint.id)}
                     className={`p-4 rounded-xl text-left transition-all duration-300 border-2 ${
                       selectedViewpoint === viewpoint.id
                         ? `bg-gradient-to-br ${viewpoint.color} text-white border-transparent shadow-lg`
-                        : 'bg-gray-50 border-gray-200 hover:border-gray-300 text-gray-700'
+                        : "bg-gray-50 border-gray-200 hover:border-gray-300 text-gray-700"
                     }`}
                   >
                     <div className="flex items-center space-x-3">
@@ -104,14 +142,14 @@ const AnalysisPage = () => {
                       <span className="font-medium">{viewpoint.label}</span>
                     </div>
                   </button>
-                )
+                );
               })}
             </div>
           </div>
         </motion.div>
 
         {/* Comparison Overview (only for comparison view) */}
-        {selectedViewpoint === 'comparison' && (
+        {/* {selectedViewpoint === "comparison" && (
           <motion.div
             className="mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -124,11 +162,12 @@ const AnalysisPage = () => {
               </h2>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Independence Thought */}
                 <div className="bg-red-50 rounded-xl p-6 border border-red-200">
                   <div className="flex items-center space-x-3 mb-4">
                     <XCircle className="w-6 h-6 text-red-600" />
-                    <h3 className="text-xl font-bold text-red-800">Tư tưởng độc lập dân tộc</h3>
+                    <h3 className="text-xl font-bold text-red-800">
+                      Tư tưởng độc lập dân tộc
+                    </h3>
                   </div>
                   <ul className="space-y-2 text-red-700">
                     <li>• Khát vọng giải phóng dân tộc</li>
@@ -138,11 +177,12 @@ const AnalysisPage = () => {
                   </ul>
                 </div>
 
-                {/* Socialist Thought */}
                 <div className="bg-green-50 rounded-xl p-6 border border-green-200">
                   <div className="flex items-center space-x-3 mb-4">
                     <CheckCircle className="w-6 h-6 text-green-600" />
-                    <h3 className="text-xl font-bold text-green-800">Tư tưởng chủ nghĩa xã hội</h3>
+                    <h3 className="text-xl font-bold text-green-800">
+                      Tư tưởng chủ nghĩa xã hội
+                    </h3>
                   </div>
                   <ul className="space-y-2 text-green-700">
                     <li>• Xóa bỏ chế độ bóc lột</li>
@@ -154,14 +194,14 @@ const AnalysisPage = () => {
               </div>
             </div>
           </motion.div>
-        )}
+        )} */}
 
         {/* Analysis Sections */}
         <div className="space-y-8">
           <AnimatePresence>
-            {renderViewpointContent().map((analysis, index) => {
-              const Icon = getAnalysisIcon(analysis.category)
-              const isExpanded = expandedSection === analysis.id
+            {renderViewpointContent()?.map((analysis, index) => {
+              const Icon = getAnalysisIcon(analysis.category);
+              const isExpanded = expandedSection === analysis.id;
 
               return (
                 <motion.div
@@ -175,11 +215,13 @@ const AnalysisPage = () => {
                   {/* Section Header */}
                   <div
                     className="p-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
-                    onClick={() => setExpandedSection(isExpanded ? null : analysis.id)}
+                    onClick={() =>
+                      setExpandedSection(isExpanded ? null : analysis.id)
+                    }
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-lime-600 rounded-lg flex items-center justify-center">
                           <Icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -192,7 +234,7 @@ const AnalysisPage = () => {
 
                       <div className="flex items-center space-x-2">
                         <div className="text-sm text-gray-500">
-                          {analysis.content.length} điểm phân tích
+                          {analysis.content.length} điểm chính
                         </div>
                         {isExpanded ? (
                           <ChevronUp className="w-5 h-5 text-gray-400" />
@@ -208,7 +250,7 @@ const AnalysisPage = () => {
                     {isExpanded && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
+                        animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                         className="border-t border-gray-100"
@@ -218,19 +260,38 @@ const AnalysisPage = () => {
                           <div>
                             <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
                               <FileText className="w-4 h-4 mr-2" />
+                              Nội dung và đặc điểm
+                            </h4>
+                            <motion.div
+                              className="bg-purple-50 rounded-lg p-4 border border-purple-200"
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                            >
+                              <div className="flex items-start space-x-3">
+                                <p className="text-gray-700 text-sm leading-relaxed">
+                                  {analysis.detail}
+                                </p>
+                              </div>
+                            </motion.div>
+                          </div>
+
+                          {/* Content Points */}
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
+                              <Sparkle className="w-4 h-4 mr-2" />
                               Luận điểm chính
                             </h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {analysis.content.map((point, pointIndex) => (
                                 <motion.div
                                   key={pointIndex}
-                                  className="bg-blue-50 rounded-lg p-4 border border-blue-200"
+                                  className="bg-orange-50 rounded-lg p-4 border border-orange-200"
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: pointIndex * 0.1 }}
                                 >
                                   <div className="flex items-start space-x-3">
-                                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                                       <span className="text-white text-xs font-bold">
                                         {pointIndex + 1}
                                       </span>
@@ -247,69 +308,76 @@ const AnalysisPage = () => {
                           {/* Evidence */}
                           <div>
                             <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                              <AlertCircle className="w-4 h-4 mr-2" />
+                              <ClipboardClock className="w-4 h-4 mr-2" />
                               Dẫn chứng lịch sử
                             </h4>
                             <div className="space-y-3">
-                              {analysis.evidence.map((evidence, evidenceIndex) => (
-                                <motion.div
-                                  key={evidenceIndex}
-                                  className="bg-green-50 rounded-lg p-4 border border-green-200"
-                                  initial={{ opacity: 0, x: 10 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: evidenceIndex * 0.1 }}
-                                >
-                                  <div className="flex items-start space-x-3">
-                                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                                    <p className="text-gray-700 text-sm leading-relaxed">
-                                      {evidence}
-                                    </p>
-                                  </div>
-                                </motion.div>
-                              ))}
+                              {analysis.evidence.map(
+                                (evidence, evidenceIndex) => (
+                                  <motion.div
+                                    key={evidenceIndex}
+                                    className="bg-lime-50 rounded-lg p-4 border border-lime-200"
+                                    initial={{ opacity: 0, x: 10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: evidenceIndex * 0.1 }}
+                                  >
+                                    <div className="flex items-start space-x-3">
+                                      <ClipboardClock className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+                                      <p className="text-gray-700 text-sm leading-relaxed">
+                                        {evidence}
+                                      </p>
+                                    </div>
+                                  </motion.div>
+                                )
+                              )}
                             </div>
                           </div>
 
                           {/* Counter Arguments (if available) */}
-                          {analysis.counterArguments && analysis.counterArguments.length > 0 && (
-                            <div>
-                              <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
-                                <XCircle className="w-4 h-4 mr-2" />
-                                Phản biện
-                              </h4>
-                              <div className="space-y-3">
-                                {analysis.counterArguments.map((counter, counterIndex) => (
-                                  <motion.div
-                                    key={counterIndex}
-                                    className="bg-orange-50 rounded-lg p-4 border border-orange-200"
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: counterIndex * 0.1 }}
-                                  >
-                                    <div className="flex items-start space-x-3">
-                                      <AlertCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
-                                      <p className="text-gray-700 text-sm leading-relaxed">
-                                        {counter}
-                                      </p>
-                                    </div>
-                                  </motion.div>
-                                ))}
+                          {analysis.counterArguments &&
+                            analysis.counterArguments.length > 0 && (
+                              <div>
+                                <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
+                                  <XCircle className="w-4 h-4 mr-2" />
+                                  Phản biện
+                                </h4>
+                                <div className="space-y-3">
+                                  {analysis.counterArguments.map(
+                                    (counter, counterIndex) => (
+                                      <motion.div
+                                        key={counterIndex}
+                                        className="bg-orange-50 rounded-lg p-4 border border-orange-200"
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{
+                                          delay: counterIndex * 0.1,
+                                        }}
+                                      >
+                                        <div className="flex items-start space-x-3">
+                                          <AlertCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
+                                          <p className="text-gray-700 text-sm leading-relaxed">
+                                            {counter}
+                                          </p>
+                                        </div>
+                                      </motion.div>
+                                    )
+                                  )}
+                                </div>
                               </div>
-                            </div>
-                          )}
+                            )}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.div>
-              )
+              );
             })}
           </AnimatePresence>
         </div>
 
         {/* Interactive Data Visualization */}
         <motion.div
-          className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-lg p-8 text-white overflow-hidden relative"
+          className="mt-16 bg-gradient-to-r from-orange-600 to-lime-600 rounded-2xl shadow-lg p-8 text-white overflow-hidden relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -320,11 +388,13 @@ const AnalysisPage = () => {
           <div className="absolute bottom-6 left-6 w-16 h-16 bg-white bg-opacity-10 rounded-full float-animation-delayed"></div>
 
           <div className="relative z-10">
-            <h3 className="text-2xl font-bold mb-6 text-center">
-              Dữ liệu thống kê quan trọng
-            </h3>
+            <p className="italic text-center">
+              Nguồn học liệu: Bài giảng “Vấn đề dân tộc và tôn giáo trong thời
+              kỳ quá độ lên CNXH”, Học phần Chủ nghĩa Xã hội Khoa học – Tiết
+              22–26, Bộ Giáo dục & Đào tạo (2021).
+            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
                 className="text-center"
                 initial={{ scale: 0 }}
@@ -333,7 +403,9 @@ const AnalysisPage = () => {
                 transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
               >
                 <div className="relative">
-                  <div className="text-4xl font-bold mb-2 pulse-glow">100,000+</div>
+                  <div className="text-4xl font-bold mb-2 pulse-glow">
+                    100,000+
+                  </div>
                   <div className="w-full bg-red-200 rounded-full h-2 mb-2">
                     <motion.div
                       className="bg-red-400 h-2 rounded-full"
@@ -343,7 +415,9 @@ const AnalysisPage = () => {
                       transition={{ duration: 2, delay: 0.5 }}
                     ></motion.div>
                   </div>
-                  <div className="text-blue-100">Người bị bắt giữ trong chiến dịch "Tố Cộng"</div>
+                  <div className="text-blue-100">
+                    Người bị bắt giữ trong chiến dịch "Tố Cộng"
+                  </div>
                 </div>
               </motion.div>
 
@@ -355,7 +429,9 @@ const AnalysisPage = () => {
                 transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
               >
                 <div className="relative">
-                  <div className="text-4xl font-bold mb-2 pulse-glow">25,000</div>
+                  <div className="text-4xl font-bold mb-2 pulse-glow">
+                    25,000
+                  </div>
                   <div className="w-full bg-orange-200 rounded-full h-2 mb-2">
                     <motion.div
                       className="bg-orange-400 h-2 rounded-full"
@@ -365,7 +441,9 @@ const AnalysisPage = () => {
                       transition={{ duration: 2, delay: 0.7 }}
                     ></motion.div>
                   </div>
-                  <div className="text-blue-100">Người bị giết hại (1955-1959)</div>
+                  <div className="text-blue-100">
+                    Người bị giết hại (1955-1959)
+                  </div>
                 </div>
               </motion.div>
 
@@ -387,7 +465,9 @@ const AnalysisPage = () => {
                       transition={{ duration: 2, delay: 0.9 }}
                     ></motion.div>
                   </div>
-                  <div className="text-blue-100">Nhân dân miền Nam ủng hộ thống nhất (CIA 1955)</div>
+                  <div className="text-blue-100">
+                    Nhân dân miền Nam ủng hộ thống nhất (CIA 1955)
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -415,7 +495,9 @@ const AnalysisPage = () => {
                 transition={{ duration: 0.8, delay: 1.4 }}
               >
                 <div className="text-3xl font-bold mb-2">2 năm</div>
-                <div className="text-blue-100">Thời hạn thống nhất theo Geneva</div>
+                <div className="text-blue-100">
+                  Thời hạn thống nhất theo Geneva
+                </div>
                 <div className="mt-2">
                   <AlertCircle className="w-8 h-8 mx-auto text-red-400 animate-pulse" />
                 </div>
@@ -429,17 +511,19 @@ const AnalysisPage = () => {
                 transition={{ duration: 0.8, delay: 1.6 }}
               >
                 <div className="text-3xl font-bold mb-2">10 năm</div>
-                <div className="text-blue-100">Giai đoạn nghiên cứu (1954-1964)</div>
+                <div className="text-blue-100">
+                  Giai đoạn nghiên cứu (1954-1964)
+                </div>
                 <div className="mt-2">
                   <CheckCircle className="w-8 h-8 mx-auto text-green-400 animate-pulse" />
                 </div>
               </motion.div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AnalysisPage
+export default AnalysisPage;

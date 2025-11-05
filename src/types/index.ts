@@ -21,6 +21,7 @@ export interface AnalysisPoint {
   id: string;
   category: string;
   title: string;
+  detail: string;
   content: string[];
   evidence: string[];
   counterArguments?: string[];
