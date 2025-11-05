@@ -60,8 +60,30 @@ const AIHistoricalAssistant = () => {
     "Xin chào! Tôi là AI Tôn giáo & CNXH, được huấn luyện chuyên sâu về quan điểm Mác-Lênin và chính sách của Đảng về tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội. Tôi có thể giúp bạn tìm hiểu về bản chất, nguồn gốc của tôn giáo, tình hình tôn giáo ở Việt Nam hiện nay, và các chính sách, quan hệ dân tộc-tôn giáo trong thời kỳ quá độ. Bạn muốn tìm hiểu về vấn đề gì?"
   , [])
 
+  // Function to check if question is related to the topic
+  const isTopicRelated = (message: string): boolean => {
+    const lowerMessage = message.toLowerCase()
+    
+    // Keywords related to religion and socialism transition
+    const relevantKeywords = [
+      'tôn giáo', 'tín ngưỡng', 'phật giáo', 'công giáo', 'thiên chúa giáo', 'cao đài', 'hòa hảo', 'tin lành',
+      'mác', 'lênin', 'hồ chí minh', 'cnxh', 'chủ nghĩa xã hội', 'quá độ', 'đảng', 'nhà nước',
+      'bản chất', 'nguồn gốc', 'tính chất', 'nguyên tắc', 'cơ cấu', 'đặc điểm', 'thành phần', 'chính sách',
+      'quan hệ', 'dân tộc', 'chức sắc', 'tín đồ', 'giáo hội', 'tự do tín ngưỡng', 'đoàn kết',
+      'xin chào', 'hello', 'chào', 'cảm ơn', 'thank'
+    ]
+    
+    // Check if message contains any relevant keywords
+    return relevantKeywords.some(keyword => lowerMessage.includes(keyword))
+  }
+
   const getOfflineResponse = (message: string): string | null => {
     const lowerMessage = message.toLowerCase()
+
+    // First check if the question is topic-related
+    if (!isTopicRelated(message)) {
+      return "Xin lỗi, tôi chỉ có thể trả lời các câu hỏi liên quan đến tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội. Bạn có thể hỏi về:\n\n• Quan điểm Mác-Lênin về tôn giáo\n• Tình hình tôn giáo ở Việt Nam hiện nay\n• Chính sách của Đảng và Nhà nước về tôn giáo\n• Quan hệ dân tộc-tôn giáo trong thời kỳ quá độ\n\nVui lòng đặt câu hỏi khác liên quan đến chủ đề này."
+    }
 
     const responses: { [key: string]: string } = {
       "bản chất": `Quan điểm Mác-Lênin về bản chất và nguồn gốc của tôn giáo:
@@ -220,8 +242,16 @@ const AIHistoricalAssistant = () => {
       // Get conversation history from localStorage
       const conversationHistory = JSON.parse(localStorage.getItem('ai-chat-history') || '[]')
 
+      // First check if the question is topic-related before sending to API
+      if (!isTopicRelated(message)) {
+        setIsTyping(false)
+        return "Xin lỗi, tôi chỉ có thể trả lời các câu hỏi liên quan đến tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội. Bạn có thể hỏi về:\n\n• Quan điểm Mác-Lênin về tôn giáo\n• Tình hình tôn giáo ở Việt Nam hiện nay\n• Chính sách của Đảng và Nhà nước về tôn giáo\n• Quan hệ dân tộc-tôn giáo trong thời kỳ quá độ\n\nVui lòng đặt câu hỏi khác liên quan đến chủ đề này."
+      }
+
       // System prompt for Religion in the transition to socialism (UPDATED CORE KNOWLEDGE)
       const systemPrompt = `Bạn là một AI chuyên gia về tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội. Bạn được huấn luyện chuyên sâu để cung cấp thông tin chính xác, khách quan theo chủ nghĩa Mác–Lênin, tư tưởng Hồ Chí Minh và đường lối của Đảng, Nhà nước Việt Nam.
+
+QUAN TRỌNG: Bạn CHỈ được trả lời các câu hỏi liên quan đến tôn giáo trong thời kỳ quá độ lên CNXH. Nếu câu hỏi không liên quan đến chủ đề này, hãy từ chối một cách lịch sự và hướng dẫn người dùng hỏi về đúng chủ đề.
 
 KIẾN THỨC CỐT LÕI (CHUẨN HÓA):
 
@@ -263,16 +293,40 @@ VII. MỐC THỜI GIAN QUAN TRỌNG
 - 2003: Pháp lệnh Tín ngưỡng, Tôn giáo.
 - 2016: Luật Tín ngưỡng, Tôn giáo (hiệu lực 2018).
 
-NGUYÊN TẮC TRẢ LỜI
-1) Tiếng Việt chuẩn, súc tích, mạch lạc; ưu tiên gợi mở – giải thích ngắn gọn.
-2) Không bịa đặt; bám sát giáo trình CNXH khoa học K2021 và văn kiện Đảng/luật pháp VN.
-3) Khi nêu sự kiện/chính sách, kèm mốc thời gian rõ.
-4) Khuyến khích tư duy phản biện, tôn trọng đa dạng tôn giáo, tránh định kiến.
-5) Độ dài mặc định 120–350 từ, tùy độ phức tạp câu hỏi.
+NGUYÊN TẮC TRẢ LỜI:
 
-ĐIỀU CẤM
-- Không kích động, xúc phạm niềm tin tôn giáo; không thiên vị hay phê phán tôn giáo nào.
-- Không suy diễn chính trị; không trả lời ngoài phạm vi “tôn giáo trong thời kỳ quá độ lên CNXH”.`
+1. Sử dụng tiếng Việt chuẩn, dễ hiểu
+2. Cung cấp thông tin chính xác dựa trên nội dung bài học
+3. Trích dẫn năm tháng, số liệu cụ thể khi có thể
+4. Giải thích bối cảnh để người đọc hiểu rõ hơn
+5. Cân bằng các quan điểm khác nhau khi phù hợp
+6. Khuyến khích tư duy phản biện và học hỏi
+7. Độ dài phù hợp (100-400 từ tùy theo độ phức tạp của câu hỏi)
+8. Sử dụng giọng điệu thân thiện, dễ tiếp cận
+
+PHONG CÁCH GIAO TIẾP:
+- Thân thiện và dễ tiếp cận
+- Khoa học và khách quan
+- Giải thích rõ ràng, logic
+- Sử dụng ví dụ minh họa khi cần thiết
+- Khuyến khích đặt câu hỏi tiếp theo
+
+ĐIỀU CẤM:
+- Không bịa đặt
+- Không sử dụng ngôn ngữ phản cảm hoặc kích động
+- TUYỆT ĐỐI KHÔNG trả lời câu hỏi ngoài phạm vi tôn giáo trong thời kỳ quá độ lên CNXH
+- Không thể hiện quan điểm chính trị hiện tại
+- Không thiên vị quá mức theo một quan điểm duy nhất
+- Không bịa đặt hoặc xuyên tạc lý luận
+- Không sử dụng ngôn ngữ phản cảm, kích động
+- Không bàn về chính trị đương đại ngoài phạm vi lý luận và nội dung học phần
+- Không thiên vị một quan điểm ngoài khung lý luận Mác - Lênin
+
+CÁCH XỬ LÝ CÂU HỎI NGOÀI PHẠM VI:
+Nếu câu hỏi không liên quan đến tôn giáo trong thời kỳ quá độ lên CNXH, hãy trả lời:
+"Xin lỗi, tôi chỉ có thể trả lời các câu hỏi liên quan đến tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội. Bạn có thể hỏi về quan điểm Mác-Lênin về tôn giáo, tình hình tôn giáo ở Việt Nam, chính sách tôn giáo, hoặc quan hệ dân tộc-tôn giáo. Vui lòng đặt câu hỏi khác liên quan đến chủ đề này."
+
+Lưu ý mạnh: TUYỆT ĐỐI không trả lời các câu hỏi không liên quan đến nội dung bài học, kể cả khi người dùng yêu cầu hoặc thúc ép.`
 
       // Build messages array for OpenAI
       const messages = [

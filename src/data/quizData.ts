@@ -4,719 +4,550 @@ export interface QuizQuestion {
   options: string[];
   correctAnswer: number;
   explanation: string;
-  category: 'tu-tuong-doc-lap' | 'tu-tuong-xa-hoi' | 'ket-hop-hai-tu-tuong' | 'van-dung-thuc-tien' | 'y-nghia-lich-su';
+  category: 'mo-bai-gioi-thieu' | 'ban-chat-ton-giao' | 'quan-diem-mac-lenin' | 'ton-giao-trong-qua-do' | 'chinh-sach-ton-giao' |'ket-luan-lien-he';
   difficulty: 'easy' | 'medium' | 'hard';
 }
 
 export const quizQuestions: QuizQuestion[] = [
   {
-    id: 1,
-    question: "Tư tưởng độc lập dân tộc của Hồ Chí Minh được hình thành từ khát vọng nào?",
-    options: [
-      "Khát vọng làm giàu cho cá nhân",
-      "Khát vọng giải phóng dân tộc khỏi ách thống trị",
-      "Khát vọng trở thành lãnh đạo",
-      "Khát vọng du lịch khắp thế giới"
-    ],
-    correctAnswer: 1,
-    explanation: "Tư tưởng độc lập dân tộc của Hồ Chí Minh xuất phát từ khát vọng giải phóng dân tộc Việt Nam khỏi ách thống trị của thực dân, phong kiến.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'easy'
+    "id": 1,
+    "question": "Tôn giáo là một hiện tượng thuộc lĩnh vực nào của đời sống xã hội?",
+    "options": ["Chính trị", "Văn hóa – tinh thần", "Kinh tế", "Pháp lý"],
+    "correctAnswer": 1,
+    "explanation": "Tôn giáo là hình thái ý thức xã hội thuộc lĩnh vực văn hóa – tinh thần.",
+    "category": "mo-bai-gioi-thieu",
+    "difficulty": "easy"
   },
   {
-    id: 2,
-    question: "Hồ Chí Minh tiếp xúc với tư tưởng Mác-Lênin lần đầu tiên ở đâu?",
-    options: [
-      "Liên Xô",
-      "Trung Quốc",
-      "Pháp",
-      "Đức"
-    ],
-    correctAnswer: 2,
-    explanation: "Hồ Chí Minh tiếp xúc với tư tưởng Mác-Lênin lần đầu tiên khi ở Paris, Pháp, thông qua việc đọc 'Luận cương về vấn đề dân tộc và thuộc địa' của Lênin.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'medium'
+    "id": 2,
+    "question": "Khoảng bao nhiêu phần trăm dân số Việt Nam có đời sống tín ngưỡng – tôn giáo?",
+    "options": ["60%", "70%", "90%", "95%"],
+    "correctAnswer": 3,
+    "explanation": "Theo Tổng cục Thống kê 2021, hơn 95% dân số Việt Nam có đời sống tín ngưỡng.",
+    "category": "mo-bai-gioi-thieu",
+    "difficulty": "easy"
   },
   {
-    id: 3,
-    question: "Đảng Cộng sản Việt Nam được thành lập vào ngày nào?",
-    options: [
-      "19/5/1890",
-      "3/2/1930",
-      "2/9/1945",
-      "19/5/1941"
+    "id": 3,
+    "question": "Tôn giáo có vai trò gì trong xã hội hiện nay?",
+    "options": [
+      "Chỉ mang tính mê tín",
+      "Có ảnh hưởng đến đạo đức và văn hóa",
+      "Không còn vai trò đáng kể",
+      "Là hiện tượng phi xã hội"
     ],
-    correctAnswer: 1,
-    explanation: "Đảng Cộng sản Việt Nam được Hồ Chí Minh thành lập ngày 3/2/1930 tại Hồng Kông, đánh dấu sự kết hợp giữa chủ nghĩa yêu nước và chủ nghĩa xã hội.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'easy'
+    "correctAnswer": 1,
+    "explanation": "Tôn giáo vẫn có vai trò đạo đức, tinh thần và văn hóa quan trọng trong đời sống.",
+    "category": "mo-bai-gioi-thieu",
+    "difficulty": "easy"
   },
   {
-    id: 4,
-    question: "Việt Minh được thành lập vào năm nào?",
-    options: [
-      "1930",
-      "1941",
-      "1945",
-      "1954"
+    "id": 4,
+    "question": "Việc nghiên cứu tôn giáo trong CNXH có ý nghĩa gì?",
+    "options": [
+      "Giúp hiểu rõ đời sống tinh thần nhân dân",
+      "Để xóa bỏ tôn giáo",
+      "Không có giá trị thực tiễn",
+      "Chỉ phục vụ mục tiêu học thuật"
     ],
-    correctAnswer: 1,
-    explanation: "Việt Minh được thành lập ngày 19/5/1941 tại Pác Bó, Cao Bằng, thể hiện tư tưởng đại đoàn kết dân tộc của Hồ Chí Minh.",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Hiểu rõ tôn giáo giúp định hướng chính sách xã hội và củng cố đoàn kết dân tộc.",
+    "category": "mo-bai-gioi-thieu",
+    "difficulty": "medium"
   },
   {
-    id: 5,
-    question: "Tuyên ngôn độc lập 2/9/1945 thể hiện điều gì?",
-    options: [
-      "Chỉ có tư tưởng độc lập dân tộc",
-      "Chỉ có tư tưởng xã hội chủ nghĩa",
-      "Sự kết hợp độc lập dân tộc với dân chủ nhân dân",
-      "Không có tư tưởng gì rõ ràng"
-    ],
-    correctAnswer: 2,
-    explanation: "Tuyên ngôn độc lập 2/9/1945 thể hiện sự kết hợp hài hòa giữa độc lập dân tộc và dân chủ nhân dân, nền tảng của nhà nước Việt Nam.",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'medium'
+    "id": 5,
+    "question": "Ở Việt Nam hiện nay có bao nhiêu tổ chức tôn giáo được Nhà nước công nhận?",
+    "options": ["20", "33", "43", "60"],
+    "correctAnswer": 2,
+    "explanation": "Theo Ban Tôn giáo Chính phủ (2023), Việt Nam có 43 tổ chức tôn giáo được công nhận hợp pháp.",
+    "category": "mo-bai-gioi-thieu",
+    "difficulty": "medium"
   },
   {
-    id: 6,
-    question: "Cải cách ruộng đất 1953-1956 thể hiện tư tưởng nào của Hồ Chí Minh?",
-    options: [
-      "Chỉ có tư tưởng độc lập dân tộc",
-      "Chỉ có tư tưởng xã hội chủ nghĩa",
-      "Kết hợp độc lập dân tộc với xây dựng xã hội công bằng",
-      "Không liên quan đến tư tưởng"
+    "id": 6,
+    "question": "Theo C. Mác, tôn giáo là:",
+    "options": [
+      "Tiếng thở dài của sinh vật bị áp bức",
+      "Một công cụ chính trị",
+      "Sự phản ánh vật chất",
+      "Một hình thức nghệ thuật"
     ],
-    correctAnswer: 2,
-    explanation: "Cải cách ruộng đất thể hiện việc vận dụng tư tưởng xã hội chủ nghĩa để xây dựng xã hội công bằng, đồng thời củng cố độc lập dân tộc.",
-    category: 'van-dung-thuc-tien',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "C. Mác coi tôn giáo là tiếng thở dài của sinh vật bị áp bức – phản ánh nỗi khổ hiện thực.",
+    "category": "ban-chat-ton-giao",
+    "difficulty": "easy"
   },
   {
-    id: 7,
-    question: "Đường lối 'kháng chiến kiến quốc' thể hiện điều gì?",
-    options: [
-      "Chỉ tập trung kháng chiến",
-      "Chỉ tập trung xây dựng đất nước",
-      "Kết hợp kháng chiến với xây dựng đất nước",
-      "Không có mục tiêu rõ ràng"
-    ],
-    correctAnswer: 2,
-    explanation: "Đường lối 'kháng chiến kiến quốc' thể hiện sự kết hợp hài hòa giữa bảo vệ độc lập dân tộc và xây dựng chế độ xã hội mới.",
-    category: 'van-dung-thuc-tien',
-    difficulty: 'medium'
+    "id": 7,
+    "question": "Tôn giáo là hình thái ý thức xã hội phản ánh thế giới dưới dạng:",
+    "options": ["Hiện thực khách quan", "Hư ảo, siêu nhiên", "Khoa học logic", "Triết học duy lý"],
+    "correctAnswer": 1,
+    "explanation": "Tôn giáo phản ánh thế giới khách quan qua hình thức hư ảo và niềm tin siêu nhiên.",
+    "category": "ban-chat-ton-giao",
+    "difficulty": "easy"
   },
   {
-    id: 8,
-    question: "Di chúc của Chủ tịch Hồ Chí Minh khẳng định điều gì?",
-    options: [
-      "Chỉ cần độc lập dân tộc",
-      "Chỉ cần chủ nghĩa xã hội",
-      "Độc lập dân tộc và chủ nghĩa xã hội là hai mục tiêu chiến lược",
-      "Không cần mục tiêu gì"
+    "id": 8,
+    "question": "Tôn giáo ra đời do nguyên nhân nào sau đây?",
+    "options": [
+      "Tự nhiên, xã hội, nhận thức, tâm lý",
+      "Chính trị và kinh tế",
+      "Ngẫu nhiên",
+      "Ảnh hưởng của công nghệ"
     ],
-    correctAnswer: 2,
-    explanation: "Di chúc Hồ Chí Minh khẳng định 'Độc lập dân tộc và chủ nghĩa xã hội là hai mục tiêu chiến lược của cách mạng Việt Nam'.",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Theo Mác, bốn nguyên nhân cơ bản hình thành tôn giáo gồm: tự nhiên, xã hội, nhận thức, tâm lý.",
+    "category": "ban-chat-ton-giao",
+    "difficulty": "medium"
   },
   {
-    id: 9,
-    question: "Tư tưởng Hồ Chí Minh có ý nghĩa gì đối với thời đại ngày nay?",
-    options: [
-      "Chỉ có ý nghĩa lịch sử",
-      "Không còn phù hợp",
-      "Tiếp tục là kim chỉ nam cho sự nghiệp đổi mới",
-      "Chỉ áp dụng cho quá khứ"
+    "id": 9,
+    "question": "Tôn giáo phản ánh điều gì trong xã hội có giai cấp?",
+    "options": [
+      "Những ảo tưởng phi hiện thực",
+      "Nỗi khổ và bất công của con người",
+      "Sự phát triển của khoa học",
+      "Tư duy duy vật biện chứng"
     ],
-    correctAnswer: 2,
-    explanation: "Tư tưởng Hồ Chí Minh về độc lập dân tộc và chủ nghĩa xã hội tiếp tục là kim chỉ nam cho sự nghiệp đổi mới và phát triển đất nước.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'hard'
+    "correctAnswer": 1,
+    "explanation": "Tôn giáo phản ánh nỗi đau, sự bất lực và áp bức trong xã hội có giai cấp.",
+    "category": "ban-chat-ton-giao",
+    "difficulty": "medium"
   },
   {
-    id: 10,
-    question: "Đặc điểm nổi bật nhất của tư tưởng Hồ Chí Minh là gì?",
-    options: [
-      "Chỉ có tính dân tộc",
-      "Chỉ có tính quốc tế",
-      "Kết hợp hài hòa tính dân tộc với tính thời đại",
-      "Không có đặc điểm gì"
+    "id": 10,
+    "question": "Tôn giáo mang tính giai cấp vì:",
+    "options": [
+      "Chỉ xuất hiện trong giai cấp tư sản",
+      "Phản ánh lợi ích của các giai cấp khác nhau",
+      "Không có giai cấp nào theo đạo",
+      "Là hiện tượng thuần túy cá nhân"
     ],
-    correctAnswer: 2,
-    explanation: "Đặc điểm nổi bật nhất là sự kết hợp hài hòa giữa tính dân tộc (độc lập dân tộc) với tính thời đại (chủ nghĩa xã hội).",
-    category: 'y-nghia-lich-su',
-    difficulty: 'hard'
+    "correctAnswer": 1,
+    "explanation": "Trong xã hội có giai cấp, tôn giáo chịu ảnh hưởng và phản ánh lợi ích giai cấp.",
+    "category": "ban-chat-ton-giao",
+    "difficulty": "hard"
   },
   {
-    id: 11,
-    question: "Theo Hồ Chí Minh, độc lập dân tộc có nghĩa là gì?",
-    options: [
-      "Chỉ tự do về chính trị",
-      "Chỉ tự chủ về kinh tế",
-      "Tự do, tự chủ toàn diện về chính trị, kinh tế, văn hóa",
-      "Chỉ bảo vệ lãnh thổ"
+    "id": 11,
+    "question": "Ph. Ăng-ghen cho rằng tôn giáo vừa là:",
+    "options": [
+      "Công cụ thống trị vừa là sản phẩm tinh thần của nhân dân",
+      "Hiện tượng mê tín đơn thuần",
+      "Nguồn gốc khoa học",
+      "Hình thức kinh tế đặc biệt"
     ],
-    correctAnswer: 2,
-    explanation: "Độc lập dân tộc theo Hồ Chí Minh là sự tự do, tự chủ toàn diện về chính trị, kinh tế, văn hóa, không phụ thuộc vào bất kỳ thế lực ngoại bang nào.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Ăng-ghen chỉ ra tôn giáo có hai mặt: phản ánh thực tại và có thể bị lợi dụng.",
+    "category": "ban-chat-ton-giao",
+    "difficulty": "medium"
   },
   {
-    id: 12,
-    question: "Hồ Chí Minh khẳng định 'Không có gì quý hơn độc lập tự do' trong tác phẩm nào?",
-    options: [
-      "Tuyên ngôn độc lập",
-      "Di chúc",
-      "Đường Kách Mệnh",
-      "Nhật ký trong tù"
+    "id": 12,
+    "question": "Mác nói: 'Tôn giáo là thuốc phiện của nhân dân' – nghĩa là:",
+    "options": [
+      "Tôn giáo ru ngủ con người nhưng cũng xoa dịu nỗi đau hiện thực",
+      "Tôn giáo gây hại cho xã hội",
+      "Tôn giáo là nguyên nhân của nghèo đói",
+      "Tôn giáo làm suy yếu tinh thần"
     ],
-    correctAnswer: 1,
-    explanation: "Câu nói nổi tiếng này được Hồ Chí Minh khẳng định trong Di chúc, thể hiện tầm quan trọng tối cao của độc lập dân tộc.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Mác dùng hình ảnh ẩn dụ để nói tôn giáo vừa an ủi, vừa làm con người quên mất nguyên nhân khổ đau.",
+    "category": "ban-chat-ton-giao",
+    "difficulty": "medium"
   },
   {
-    id: 13,
-    question: "Chủ nghĩa xã hội trong tư tưởng Hồ Chí Minh có đặc điểm gì?",
-    options: [
-      "Hoàn toàn giống Liên Xô",
-      "Hoàn toàn giống Trung Quốc",
-      "Mang đậm tính dân tộc Việt Nam",
-      "Không có đặc điểm riêng"
+    "id": 13,
+    "question": "Theo Lênin, điều kiện để tôn giáo mất đi là:",
+    "options": [
+      "Khi xã hội không còn áp bức, bất công",
+      "Khi chính quyền cấm đoán triệt để",
+      "Khi kinh tế phát triển",
+      "Khi dân số giảm"
     ],
-    correctAnswer: 2,
-    explanation: "Chủ nghĩa xã hội trong tư tưởng Hồ Chí Minh mang đậm tính dân tộc, phù hợp với điều kiện cụ thể của Việt Nam.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Tôn giáo chỉ mất đi khi nguyên nhân xã hội sinh ra nó không còn tồn tại.",
+    "category": "quan-diem-mac-lenin",
+    "difficulty": "medium"
   },
   {
-    id: 14,
-    question: "Theo Hồ Chí Minh, mục tiêu của chủ nghĩa xã hội là gì?",
-    options: [
-      "Làm giàu cho một số người",
-      "Dân giàu, nước mạnh, xã hội công bằng, dân chủ, văn minh",
-      "Chỉ phát triển công nghiệp",
-      "Chỉ cải cách nông nghiệp"
+    "id": 14,
+    "question": "Ba nguyên tắc cơ bản trong chính sách tôn giáo của Lênin là:",
+    "options": [
+      "Tự do tín ngưỡng, phân biệt tôn giáo, đoàn kết nhân dân",
+      "Tự do tín ngưỡng – không tín ngưỡng, phân biệt lợi dụng tôn giáo, đoàn kết dân tộc",
+      "Bài trừ tôn giáo, củng cố chính quyền, phát triển kinh tế",
+      "Giới hạn niềm tin và cấm truyền đạo"
     ],
-    correctAnswer: 1,
-    explanation: "Mục tiêu chủ nghĩa xã hội theo Hồ Chí Minh là 'Dân giàu, nước mạnh, xã hội công bằng, dân chủ, văn minh'.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'easy'
+    "correctAnswer": 1,
+    "explanation": "Đây là ba nguyên tắc chính trong chính sách tôn giáo của Lênin.",
+    "category": "quan-diem-mac-lenin",
+    "difficulty": "medium"
   },
   {
-    id: 15,
-    question: "Tại sao Hồ Chí Minh kết hợp độc lập dân tộc với chủ nghĩa xã hội?",
-    options: [
-      "Để bắt chước nước khác",
-      "Vì áp lực quốc tế",
-      "Để giải quyết triệt để vấn đề dân tộc và xã hội",
-      "Không có lý do cụ thể"
+    "id": 15,
+    "question": "Lênin cho rằng không thể xóa bỏ tôn giáo bằng:",
+    "options": [
+      "Giáo dục văn hóa",
+      "Mệnh lệnh hành chính hay bạo lực",
+      "Đối thoại hòa bình",
+      "Chính sách kinh tế"
     ],
-    correctAnswer: 2,
-    explanation: "Hồ Chí Minh kết hợp hai tư tưởng để giải quyết triệt để cả vấn đề dân tộc (giải phóng khỏi thực dân) và vấn đề xã hội (xóa bỏ bóc lột).",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'hard'
+    "correctAnswer": 1,
+    "explanation": "Tôn giáo không thể bị thủ tiêu bằng mệnh lệnh hành chính, mà bằng cải tạo xã hội.",
+    "category": "quan-diem-mac-lenin",
+    "difficulty": "easy"
   },
   {
-    id: 16,
-    question: "Chiến lược 'Kháng chiến kiến quốc' thể hiện tư tưởng nào?",
-    options: [
-      "Chỉ tư tưởng quân sự",
-      "Chỉ tư tưởng kinh tế",
-      "Kết hợp bảo vệ độc lập với xây dựng chế độ mới",
-      "Không có tư tưởng rõ ràng"
+    "id": 16,
+    "question": "Quan điểm Mác – Lênin về tôn giáo khác với chủ nghĩa vô thần cực đoan ở điểm nào?",
+    "options": [
+      "Không phủ định quyền tự do tín ngưỡng",
+      "Cấm mọi hoạt động tôn giáo",
+      "Coi tôn giáo là kẻ thù",
+      "Đề cao mê tín"
     ],
-    correctAnswer: 2,
-    explanation: "Chiến lược 'Kháng chiến kiến quốc' thể hiện sự kết hợp giữa bảo vệ độc lập dân tộc và xây dựng chế độ xã hội chủ nghĩa.",
-    category: 'van-dung-thuc-tien',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Mác – Lênin chủ trương tôn trọng tự do tín ngưỡng, không cực đoan bài tôn giáo.",
+    "category": "quan-diem-mac-lenin",
+    "difficulty": "medium"
   },
   {
-    id: 17,
-    question: "Chính sách đại đoàn kết dân tộc của Hồ Chí Minh dựa trên nguyên tắc nào?",
-    options: [
-      "Chia để trị",
-      "Đoàn kết những người yêu nước",
-      "Chỉ đoàn kết một tầng lớp",
-      "Loại trừ các tầng lớp khác"
+    "id": 17,
+    "question": "Tư tưởng 'Phân biệt giữa niềm tin tôn giáo chân chính và hành vi lợi dụng tôn giáo' nhằm mục tiêu:",
+    "options": [
+      "Bảo vệ tín đồ và đấu tranh chống kẻ lợi dụng tôn giáo",
+      "Cấm truyền đạo",
+      "Loại bỏ toàn bộ tôn giáo",
+      "Tách đạo khỏi đời"
     ],
-    correctAnswer: 1,
-    explanation: "Chính sách đại đoàn kết dân tộc dựa trên nguyên tắc đoàn kết tất cả những người yêu nước, bất kể giai cấp, tôn giáo, chính kiến.",
-    category: 'van-dung-thuc-tien',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Nguyên tắc này giúp phân định rõ giữa tín ngưỡng hợp pháp và hành vi vi phạm pháp luật.",
+    "category": "quan-diem-mac-lenin",
+    "difficulty": "hard"
   },
   {
-    id: 18,
-    question: "Tư tưởng Hồ Chí Minh có ảnh hưởng gì đến các nước đang phát triển?",
-    options: [
-      "Không có ảnh hưởng",
-      "Chỉ ảnh hưởng đến Việt Nam",
-      "Là tấm gương về con đường giải phóng dân tộc",
-      "Chỉ có ý nghĩa lý thuyết"
+    "id": 18,
+    "question": "Đảng Cộng sản Việt Nam kế thừa quan điểm Mác – Lênin bằng cách:",
+    "options": [
+      "Phát huy giá trị tốt đẹp của tôn giáo, đấu tranh với hành vi lợi dụng",
+      "Cấm hoạt động tôn giáo",
+      "Tách biệt đạo – đời",
+      "Ưu tiên một số tôn giáo"
     ],
-    correctAnswer: 2,
-    explanation: "Tư tưởng Hồ Chí Minh là tấm gương sáng về con đường kết hợp giải phóng dân tộc với tiến bộ xã hội cho các nước đang phát triển.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Đại hội XIII của Đảng khẳng định kế thừa và phát triển tư tưởng Mác – Lênin về tôn giáo.",
+    "category": "quan-diem-mac-lenin",
+    "difficulty": "medium"
   },
   {
-    id: 19,
-    question: "Trong thời kỳ đổi mới, tư tưởng Hồ Chí Minh được vận dụng như thế nào?",
-    options: [
-      "Không còn phù hợp",
-      "Áp dụng nguyên văn",
-      "Vận dụng sáng tạo phù hợp với điều kiện mới",
-      "Chỉ lưu giữ như di sản"
+    "id": 19,
+    "question": "Vì sao trong thời kỳ quá độ, tôn giáo vẫn tồn tại?",
+    "options": [
+      "Do cơ sở kinh tế – xã hội và nhận thức chưa hoàn thiện",
+      "Do Nhà nước chưa mạnh",
+      "Do ảnh hưởng tư bản",
+      "Do truyền thông hiện đại"
     ],
-    correctAnswer: 2,
-    explanation: "Tư tưởng Hồ Chí Minh được vận dụng sáng tạo, phù hợp với điều kiện mới của thời kỳ đổi mới và hội nhập quốc tế.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'hard'
+    "correctAnswer": 0,
+    "explanation": "Nguyên nhân chủ yếu: cơ sở kinh tế – xã hội và tâm lý – tín ngưỡng lâu đời.",
+    "category": "ton-giao-trong-qua-do",
+    "difficulty": "medium"
   },
   {
-    id: 20,
-    question: "Theo Hồ Chí Minh, 'Dân là gốc' có nghĩa là gì?",
-    options: [
-      "Dân chỉ là công cụ",
-      "Dân là chủ thể của cách mạng và xây dựng đất nước",
-      "Dân phải tuân theo mọi quyết định",
-      "Dân không có vai trò quan trọng"
+    "id": 20,
+    "question": "Mặt tích cực của tôn giáo trong thời kỳ quá độ là:",
+    "options": [
+      "Giáo dục đạo đức, nhân ái, tham gia từ thiện",
+      "Tuyên truyền chống phá Nhà nước",
+      "Phát triển mê tín dị đoan",
+      "Lợi dụng tín đồ để kích động"
     ],
-    correctAnswer: 1,
-    explanation: "Tư tưởng 'Dân là gốc' khẳng định nhân dân là chủ thể của cách mạng và xây dựng đất nước, là nguồn gốc của mọi quyền lực.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Tôn giáo góp phần giáo dục đạo đức và thực hiện hoạt động từ thiện.",
+    "category": "ton-giao-trong-qua-do",
+    "difficulty": "easy"
   },
   {
-    id: 21,
-    question: "Hồ Chí Minh sinh năm nào?",
-    options: [
-      "1889",
-      "1890",
-      "1891",
-      "1892"
+    "id": 21,
+    "question": "Một ví dụ tiêu biểu cho vai trò tích cực của tôn giáo trong đại dịch Covid-19 là:",
+    "options": [
+      "Giáo hội Phật giáo Việt Nam ủng hộ hàng trăm tỷ đồng phòng dịch",
+      "Các tổ chức tôn giáo tạm ngưng hoạt động",
+      "Tín đồ từ chối tiêm vaccine",
+      "Mê tín lan rộng"
     ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh sinh ngày 19/5/1890 tại làng Sen, Nam Đàn, Nghệ An.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Các tổ chức tôn giáo tích cực tham gia phòng chống dịch, cứu trợ người dân.",
+    "category": "ton-giao-trong-qua-do",
+    "difficulty": "medium"
   },
   {
-    id: 22,
-    question: "Tên thật của Hồ Chí Minh là gì?",
-    options: [
-      "Nguyễn Sinh Cung",
-      "Nguyễn Tất Thành",
-      "Nguyễn Ái Quốc",
-      "Hồ Chí Minh"
+    "id": 22,
+    "question": "Mặt tiêu cực của tôn giáo trong xã hội hiện nay là:",
+    "options": [
+      "Một số phần tử lợi dụng tôn giáo để tuyên truyền sai trái",
+      "Khuyến khích đạo đức tốt",
+      "Tham gia từ thiện",
+      "Phát triển văn hóa dân tộc"
     ],
-    correctAnswer: 0,
-    explanation: "Tên thật của Hồ Chí Minh là Nguyễn Sinh Cung, sau đổi thành Nguyễn Tất Thành.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Một số tổ chức bị lợi dụng gây mất đoàn kết và an ninh xã hội.",
+    "category": "ton-giao-trong-qua-do",
+    "difficulty": "medium"
   },
   {
-    id: 23,
-    question: "Hồ Chí Minh ra đi tìm đường cứu nước năm nào?",
-    options: [
-      "1910",
-      "1911",
-      "1912",
-      "1913"
-    ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh ra đi tìm đường cứu nước năm 1911 trên tàu Amiral Latouche Tréville.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'medium'
+    "id": 23,
+    "question": "Theo Báo cáo Ban Tôn giáo Chính phủ 2023, Việt Nam có khoảng bao nhiêu tín đồ?",
+    "options": ["10 triệu", "20 triệu", "27 triệu", "40 triệu"],
+    "correctAnswer": 2,
+    "explanation": "Có hơn 27 triệu tín đồ và 43 tổ chức tôn giáo được công nhận.",
+    "category": "ton-giao-trong-qua-do",
+    "difficulty": "easy"
   },
   {
-    id: 24,
-    question: "Hồ Chí Minh lần đầu tiên sử dụng bút danh 'Nguyễn Ái Quốc' khi nào?",
-    options: [
-      "1917",
-      "1918",
-      "1919",
-      "1920"
+    "id": 24,
+    "question": "Tôn giáo trong thời kỳ quá độ thể hiện đặc điểm nào sau đây?",
+    "options": [
+      "Tồn tại lâu dài, có tính hai mặt",
+      "Biến mất hoàn toàn",
+      "Chỉ còn trong nông thôn",
+      "Không có ảnh hưởng xã hội"
     ],
-    correctAnswer: 2,
-    explanation: "Hồ Chí Minh lần đầu sử dụng bút danh 'Nguyễn Ái Quốc' năm 1919 khi gửi Bản yêu sách 8 điều tới Hội nghị Versailles.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Tôn giáo tồn tại lâu dài, vừa có mặt tích cực, vừa có hạn chế.",
+    "category": "ton-giao-trong-qua-do",
+    "difficulty": "medium"
   },
   {
-    id: 25,
-    question: "Bản yêu sách 8 điều của Nguyễn Ái Quốc đòi hỏi điều gì?",
-    options: [
-      "Độc lập hoàn toàn cho Việt Nam",
-      "Quyền tự do, dân chủ cho người Việt ở thuộc địa",
-      "Đuổi Pháp ra khỏi Việt Nam",
-      "Thành lập chính phủ Việt Nam"
+    "id": 25,
+    "question": "Mê tín dị đoan có thể được hạn chế bằng cách nào?",
+    "options": [
+      "Giáo dục, nâng cao dân trí và hiểu biết khoa học",
+      "Cấm mọi hoạt động tôn giáo",
+      "Tách đạo khỏi đời",
+      "Không can thiệp"
     ],
-    correctAnswer: 1,
-    explanation: "Bản yêu sách 8 điều đòi hỏi quyền tự do, dân chủ cho người Việt Nam ở thuộc địa Đông Dương.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'hard'
+    "correctAnswer": 0,
+    "explanation": "Giáo dục giúp nâng cao nhận thức, tránh hiểu sai về tín ngưỡng.",
+    "category": "ton-giao-trong-qua-do",
+    "difficulty": "medium"
   },
   {
-    id: 26,
-    question: "Hồ Chí Minh gia nhập Đảng Cộng sản Pháp năm nào?",
-    options: [
-      "1919",
-      "1920",
-      "1921",
-      "1922"
-    ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh gia nhập Đảng Cộng sản Pháp năm 1920, đánh dấu bước ngoặt trong tư tưởng cách mạng.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'medium'
+    "id": 26,
+    "question": "Luật Tín ngưỡng, Tôn giáo được thông qua năm:",
+    "options": ["2003", "2016", "2013", "2018"],
+    "correctAnswer": 1,
+    "explanation": "Thông qua 2016, hiệu lực từ 1/1/2018.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "easy"
   },
   {
-    id: 27,
-    question: "Tác phẩm 'Bản án chế độ thực dân Pháp' được viết năm nào?",
-    options: [
-      "1924",
-      "1925",
-      "1926",
-      "1927"
+    "id": 27,
+    "question": "Hiến pháp 2013 (Điều 24) khẳng định:",
+    "options": [
+      "Công dân có quyền tự do tín ngưỡng, tôn giáo",
+      "Chỉ công nhận tôn giáo lớn",
+      "Cấm nghi lễ ngoài cơ sở thờ tự",
+      "Ưu tiên một tôn giáo"
     ],
-    correctAnswer: 1,
-    explanation: "Tác phẩm 'Bản án chế độ thực dân Pháp' được Hồ Chí Minh viết năm 1925, tố cáo tội ác của thực dân Pháp.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'hard'
+    "correctAnswer": 0,
+    "explanation": "Khẳng định quyền theo hoặc không theo tôn giáo.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "easy"
   },
   {
-    id: 28,
-    question: "Hội Việt Nam Cách mạng Thanh niên được thành lập ở đâu?",
-    options: [
-      "Paris",
-      "Moscow",
-      "Quảng Châu",
-      "Hồng Kông"
+    "id": 28,
+    "question": "Nghị quyết 24-NQ/TW (1990) nhấn mạnh:",
+    "options": [
+      "Tôn giáo là nhu cầu tinh thần lâu dài, cần phát huy giá trị tốt đẹp",
+      "Giảm cơ sở thờ tự",
+      "Hạn chế truyền đạo",
+      "Bài trừ tôn giáo"
     ],
-    correctAnswer: 2,
-    explanation: "Hội Việt Nam Cách mạng Thanh niên được Hồ Chí Minh thành lập tại Quảng Châu, Trung Quốc năm 1925.",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Chuyển từ 'hạn chế' sang 'phát huy giá trị tích cực'.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "medium"
   },
   {
-    id: 29,
-    question: "Tạp chí 'Thanh niên' có ý nghĩa gì?",
-    options: [
-      "Chỉ tuyên truyền văn hóa",
-      "Tuyên truyền tư tưởng cách mạng và yêu nước",
-      "Chỉ giải trí cho thanh niên",
-      "Không có ý nghĩa đặc biệt"
+    "id": 29,
+    "question": "Nguyên tắc quản lý nhà nước về tôn giáo là:",
+    "options": [
+      "Bằng pháp luật, bảo đảm bình đẳng giữa các tôn giáo",
+      "Bằng mệnh lệnh hành chính",
+      "Ưu đãi tôn giáo đông tín đồ",
+      "Không cần quản lý"
     ],
-    correctAnswer: 1,
-    explanation: "Tạp chí 'Thanh niên' do Hồ Chí Minh sáng lập để tuyên truyền tư tưởng cách mạng và lòng yêu nước cho thanh niên Việt Nam.",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Bảo đảm tự do, bình đẳng, trong khuôn khổ pháp luật.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "medium"
   },
   {
-    id: 30,
-    question: "Hồ Chí Minh học tập ở Liên Xô trong thời gian nào?",
-    options: [
-      "1923-1924",
-      "1924-1925",
-      "1924-1927",
-      "1925-1927"
+    "id": 30,
+    "question": "Phương châm 'tốt đời, đẹp đạo' thể hiện:",
+    "options": [
+      "Hòa hợp đạo đức tôn giáo và nghĩa vụ công dân",
+      "Tách đạo khỏi đời",
+      "Giảm sinh hoạt tôn giáo",
+      "Chỉ coi trọng đạo đức tôn giáo"
     ],
-    correctAnswer: 2,
-    explanation: "Hồ Chí Minh học tập tại Liên Xô từ 1924-1927, nghiên cứu sâu về chủ nghĩa Mác-Lênin.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'hard'
+    "correctAnswer": 0,
+    "explanation": "Khuyến khích tín đồ sống tốt, góp phần xã hội.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "easy"
   },
   {
-    id: 31,
-    question: "Tác phẩm 'Đường Kách Mệnh' được viết khi nào?",
-    options: [
-      "1925",
-      "1926",
-      "1927",
-      "1928"
+    "id": 31,
+    "question": "Một nội dung trọng tâm của chính sách hiện hành:",
+    "options": [
+      "Tôn trọng tự do tín ngưỡng và không tín ngưỡng",
+      "Hạn chế nghi lễ",
+      "Ưu tiên tôn giáo truyền thống",
+      "Phân biệt lương – giáo"
     ],
-    correctAnswer: 2,
-    explanation: "Tác phẩm 'Đường Kách Mệnh' được Hồ Chí Minh viết năm 1927, trình bày con đường cách mạng của Việt Nam.",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Nguyên tắc xuyên suốt trong văn kiện và luật.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "easy"
   },
   {
-    id: 32,
-    question: "Hồ Chí Minh về nước lần cuối năm nào?",
-    options: [
-      "1940",
-      "1941",
-      "1942",
-      "1943"
+    "id": 32,
+    "question": "Cách xử lý đúng với hành vi lợi dụng tôn giáo:",
+    "options": [
+      "Kết hợp pháp luật, tuyên truyền, đối thoại",
+      "Cấm tất cả hoạt động",
+      "Không xử lý để tránh va chạm",
+      "Phân biệt đối xử với tín đồ"
     ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh về nước lần cuối năm 1941, trực tiếp lãnh đạo cách mạng Việt Nam.",
-    category: 'van-dung-thuc-tien',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Vừa thượng tôn pháp luật, vừa giữ ổn định xã hội.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "hard"
   },
   {
-    id: 33,
-    question: "Căn cứ địa Pác Bó có ý nghĩa gì?",
-    options: [
-      "Chỉ là nơi ẩn náu",
-      "Nơi kết hợp lý luận với thực tiễn cách mạng Việt Nam",
-      "Chỉ là nơi nghỉ ngơi",
-      "Không có ý nghĩa đặc biệt"
+    "id": 33,
+    "question": "Một minh chứng cho hợp tác quốc tế tôn giáo của Việt Nam:",
+    "options": [
+      "Tổ chức/đón sự kiện tôn giáo lớn, đối thoại tôn giáo – văn hóa",
+      "Đóng cửa biên giới tôn giáo",
+      "Cấm tiếp xúc quốc tế",
+      "Chỉ sinh hoạt nội bộ"
     ],
-    correctAnswer: 1,
-    explanation: "Pác Bó là nơi Hồ Chí Minh kết hợp lý luận Mác-Lênin với thực tiễn cách mạng Việt Nam, hình thành tư tưởng cách mạng hoàn chỉnh.",
-    category: 'ket-hop-hai-tu-tuong',
-    difficulty: 'hard'
+    "correctAnswer": 0,
+    "explanation": "Hội nhập, đối thoại, tôn trọng luật pháp quốc tế.",
+    "category": "chinh-sach-ton-giao",
+    "difficulty": "medium"
   },
   {
-    id: 34,
-    question: "Tên gọi 'Hồ Chí Minh' có nghĩa là gì?",
-    options: [
-      "Người sáng suốt",
-      "Người có chí hướng về ánh sáng",
-      "Người anh hùng",
-      "Người lãnh đạo"
+    "id": 34,
+    "question": "Kết luận cốt lõi về tôn giáo trong quá độ lên CNXH:",
+    "options": [
+      "Tồn tại khách quan, có thể phát huy tích cực",
+      "Sẽ biến mất ngay",
+      "Chỉ còn ở nông thôn",
+      "Không liên quan xây dựng CNXH"
     ],
-    correctAnswer: 1,
-    explanation: "Tên 'Hồ Chí Minh' có nghĩa là 'người có chí hướng về ánh sáng', thể hiện lý tưởng cao đẹp của Người.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Chủ trương: tôn trọng – định hướng – phát huy.",
+    "category": "ket-luan-lien-he",
+    "difficulty": "easy"
   },
   {
-    id: 35,
-    question: "Cách mạng tháng Tám 1945 thành công nhờ điều gì?",
-    options: [
-      "Chỉ nhờ may mắn",
-      "Chỉ nhờ sức mạnh quân sự",
-      "Nhờ sự kết hợp đúng đắn giữa độc lập dân tộc và dân chủ nhân dân",
-      "Chỉ nhờ sự giúp đỡ của nước ngoài"
+    "id": 35,
+    "question": "Ý nghĩa của giải quyết đúng đắn vấn đề tôn giáo là:",
+    "options": [
+      "Củng cố đại đoàn kết, ổn định chính trị – xã hội",
+      "Giảm nghi lễ tôn giáo",
+      "Tăng cạnh tranh tôn giáo",
+      "Hạn chế quyền công dân"
     ],
-    correctAnswer: 2,
-    explanation: "Cách mạng tháng Tám thành công nhờ sự kết hợp đúng đắn giữa mục tiêu độc lập dân tộc và dân chủ nhân dân trong tư tưởng Hồ Chí Minh.",
-    category: 'van-dung-thuc-tien',
-    difficulty: 'hard'
+    "correctAnswer": 0,
+    "explanation": "Mục tiêu hướng tới phát triển bền vững.",
+    "category": "ket-luan-lien-he",
+    "difficulty": "medium"
   },
   {
-    id: 36,
-    question: "Theo Hồ Chí Minh, đạo đức cách mạng có đặc điểm gì?",
-    options: [
-      "Chỉ cần trung thành với Đảng",
-      "Kết hợp yêu nước, yêu dân với yêu chủ nghĩa xã hội",
-      "Chỉ cần hy sinh cá nhân",
-      "Không cần có nguyên tắc"
+    "id": 36,
+    "question": "Liên hệ sinh viên: Hành động phù hợp với 'tốt đời, đẹp đạo' là:",
+    "options": [
+      "Tham gia hoạt động thiện nguyện, sống có trách nhiệm",
+      "Truyền bá mê tín",
+      "Kỳ thị người khác tôn giáo",
+      "Phá hoại cơ sở thờ tự"
     ],
-    correctAnswer: 1,
-    explanation: "Đạo đức cách mạng theo Hồ Chí Minh là sự kết hợp giữa lòng yêu nước, yêu dân với lòng yêu chủ nghĩa xã hội.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'medium'
+    "correctAnswer": 0,
+    "explanation": "Ứng xử công dân – đạo đức xã hội tích cực.",
+    "category": "ket-luan-lien-he",
+    "difficulty": "easy"
   },
   {
-    id: 37,
-    question: "Tư tưởng 'Học, học nữa, học mãi' thể hiện điều gì?",
-    options: [
-      "Chỉ học sách vở",
-      "Học để phục vụ cách mạng và nhân dân",
-      "Học để làm quan",
-      "Học để khoe khoang"
+    "id": 37,
+    "question": "Trong hội nhập, tôn giáo có thể đóng góp gì?",
+    "options": [
+      "Thúc đẩy đối thoại, hòa bình, nhân văn",
+      "Kích động cô lập",
+      "Gây xung đột văn hóa",
+      "Ngăn cản hợp tác quốc tế"
     ],
-    correctAnswer: 1,
-    explanation: "Tư tưởng 'Học, học nữa, học mãi' của Hồ Chí Minh nhấn mạnh học tập để phục vụ cách mạng và nhân dân.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Giá trị nhân văn – đạo đức của tôn giáo hỗ trợ đối thoại.",
+    "category": "ket-luan-lien-he",
+    "difficulty": "medium"
   },
   {
-    id: 38,
-    question: "Phong cách Hồ Chí Minh có đặc điểm gì?",
-    options: [
-      "Xa hoa, phô trương",
-      "Giản dị, gần gũi với nhân dân",
-      "Nghiêm khắc, xa cách",
-      "Không có phong cách riêng"
+    "id": 38,
+    "question": "Một tiêu chí đánh giá 'đồng hành cùng dân tộc' của tôn giáo là:",
+    "options": [
+      "Góp phần xây dựng đời sống văn hóa, đạo đức; tuân thủ pháp luật",
+      "Tách khỏi cộng đồng",
+      "Phủ nhận trách nhiệm công dân",
+      "Chỉ chú trọng nghi lễ"
     ],
-    correctAnswer: 1,
-    explanation: "Phong cách Hồ Chí Minh đặc trưng bởi sự giản dị, gần gũi với nhân dân, thể hiện tư tưởng 'Dân là gốc'.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Hài hòa đạo – đời, thượng tôn pháp luật.",
+    "category": "ket-luan-lien-he",
+    "difficulty": "hard"
   },
   {
-    id: 39,
-    question: "Hồ Chí Minh qua đời vào ngày nào?",
-    options: [
-      "2/9/1969",
-      "3/9/1969",
-      "1/9/1969",
-      "4/9/1969"
+    "id": 39,
+    "question": "Nếu phát hiện thông tin kích động chia rẽ tôn giáo trên mạng, cách ứng xử đúng là:",
+    "options": [
+      "Báo cơ quan chức năng, không chia sẻ; tuyên truyền phản biện đúng đắn",
+      "Chia sẻ để mọi người biết",
+      "Tham gia tranh cãi cực đoan",
+      "Bỏ qua hoàn toàn"
     ],
-    correctAnswer: 0,
-    explanation: "Hồ Chí Minh qua đời vào ngày 2/9/1969, đúng ngày Quốc khánh Việt Nam.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'easy'
+    "correctAnswer": 0,
+    "explanation": "Kết hợp pháp luật – truyền thông có trách nhiệm.",
+    "category": "ket-luan-lien-he",
+    "difficulty": "hard"
   },
   {
-    id: 40,
-    question: "Di chúc Hồ Chí Minh được công bố khi nào?",
-    options: [
-      "Ngay sau khi Người mất",
-      "Sau Đại hội Đảng IV",
-      "Sau khi thống nhất đất nước",
-      "Một năm sau khi Người mất"
+    "id": 40,
+    "question": "Một thông điệp kết thúc phù hợp với bài học là:",
+    "options": [
+      "Tôn trọng tự do tín ngưỡng, phát huy giá trị tốt đẹp, đoàn kết xây dựng CNXH",
+      "Giảm sinh hoạt tôn giáo",
+      "Tách đạo khỏi đời sống",
+      "Ưu tiên một tôn giáo"
     ],
-    correctAnswer: 2,
-    explanation: "Di chúc Hồ Chí Minh được công bố sau khi thống nhất đất nước năm 1975, theo di nguyện của Người.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'medium'
-  },
-  {
-    id: 41,
-    question: "Tư tưởng Hồ Chí Minh về xây dựng Đảng có đặc điểm gì?",
-    options: [
-      "Đảng chỉ cần có kỷ luật",
-      "Đảng phải là đội tiên phong của giai cấp công nhân và nhân dân lao động",
-      "Đảng chỉ cần có nhiều đảng viên",
-      "Đảng không cần có nguyên tắc"
-    ],
-    correctAnswer: 1,
-    explanation: "Theo Hồ Chí Minh, Đảng phải là đội tiên phong của giai cấp công nhân và nhân dân lao động, phục vụ lợi ích của dân tộc và nhân dân.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'hard'
-  },
-  {
-    id: 42,
-    question: "Quan điểm của Hồ Chí Minh về văn hóa là gì?",
-    options: [
-      "Văn hóa dân tộc, khoa học, đại chúng",
-      "Chỉ cần văn hóa dân tộc",
-      "Chỉ cần văn hóa khoa học",
-      "Văn hóa không quan trọng"
-    ],
-    correctAnswer: 0,
-    explanation: "Hồ Chí Minh chủ trương xây dựng nền văn hóa Việt Nam mang tính dân tộc, khoa học và đại chúng.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'medium'
-  },
-  {
-    id: 43,
-    question: "Tư tưởng Hồ Chí Minh về giáo dục có đặc điểm gì?",
-    options: [
-      "Chỉ dạy kiến thức",
-      "Kết hợp giáo dục đức, trí, thể, mỹ",
-      "Chỉ dạy đạo đức",
-      "Giáo dục không quan trọng"
-    ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh chủ trương giáo dục toàn diện, kết hợp đức, trí, thể, mỹ để phát triển con người mới.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'easy'
-  },
-  {
-    id: 44,
-    question: "Theo Hồ Chí Minh, mối quan hệ giữa cá nhân và tập thể như thế nào?",
-    options: [
-      "Cá nhân quan trọng hơn tập thể",
-      "Tập thể quan trọng hơn cá nhân",
-      "Cá nhân và tập thể hài hòa, thống nhất",
-      "Không có mối quan hệ gì"
-    ],
-    correctAnswer: 2,
-    explanation: "Hồ Chí Minh chủ trương sự hài hòa, thống nhất giữa lợi ích cá nhân và lợi ích tập thể, dân tộc.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'medium'
-  },
-  {
-    id: 45,
-    question: "Tư tưởng Hồ Chí Minh về đoàn kết quốc tế có đặc điểm gì?",
-    options: [
-      "Chỉ đoàn kết với các nước xã hội chủ nghĩa",
-      "Đoàn kết với tất cả các lực lượng tiến bộ trên thế giới",
-      "Không cần đoàn kết quốc tế",
-      "Chỉ đoàn kết với các nước láng giềng"
-    ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh chủ trương đoàn kết với tất cả các lực lượng tiến bộ, yêu chuộng hòa bình và công lý trên thế giới.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'hard'
-  },
-  {
-    id: 46,
-    question: "Tư tưởng Hồ Chí Minh về xây dựng nhà nước có đặc điểm gì?",
-    options: [
-      "Nhà nước của dân, do dân, vì dân",
-      "Nhà nước chỉ của giai cấp thống trị",
-      "Nhà nước không cần có nguyên tắc",
-      "Nhà nước chỉ cần có quyền lực"
-    ],
-    correctAnswer: 0,
-    explanation: "Hồ Chí Minh chủ trương xây dựng nhà nước của dân, do dân và vì dân, thể hiện bản chất dân chủ nhân dân.",
-    category: 'tu-tuong-xa-hoi',
-    difficulty: 'medium'
-  },
-  {
-    id: 47,
-    question: "Theo Hồ Chí Minh, yếu tố nào quyết định thắng lợi của cách mạng?",
-    options: [
-      "Vũ khí hiện đại",
-      "Sức mạnh của nhân dân",
-      "Sự giúp đỡ của nước ngoài",
-      "May mắn"
-    ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh khẳng định sức mạnh của nhân dân là yếu tố quyết định thắng lợi của cách mạng.",
-    category: 'van-dung-thuc-tien',
-    difficulty: 'easy'
-  },
-  {
-    id: 48,
-    question: "Tư tưởng Hồ Chí Minh về hòa bình có đặc điểm gì?",
-    options: [
-      "Hòa bình bằng mọi giá",
-      "Hòa bình trong độc lập và tự do",
-      "Không cần hòa bình",
-      "Hòa bình chỉ là khẩu hiệu"
-    ],
-    correctAnswer: 1,
-    explanation: "Hồ Chí Minh chủ trương hòa bình nhưng phải trong độc lập và tự do, không chấp nhận hòa bình nô lệ.",
-    category: 'tu-tuong-doc-lap',
-    difficulty: 'hard'
-  },
-  {
-    id: 49,
-    question: "Tư tưởng Hồ Chí Minh có ảnh hưởng gì đến Hiến pháp Việt Nam?",
-    options: [
-      "Không có ảnh hưởng",
-      "Là nền tảng tư tưởng cho các Hiến pháp Việt Nam",
-      "Chỉ ảnh hưởng một phần",
-      "Chỉ có ý nghĩa tham khảo"
-    ],
-    correctAnswer: 1,
-    explanation: "Tư tưởng Hồ Chí Minh là nền tảng tư tưởng cho các Hiến pháp Việt Nam, thể hiện trong các nguyên tắc cơ bản của nhà nước.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'medium'
-  },
-  {
-    id: 50,
-    question: "Giá trị cốt lõi của tư tưởng Hồ Chí Minh là gì?",
-    options: [
-      "Chỉ có độc lập dân tộc",
-      "Chỉ có chủ nghĩa xã hội",
-      "Độc lập dân tộc gắn liền với chủ nghĩa xã hội vì hạnh phúc của nhân dân",
-      "Không có giá trị cốt lõi"
-    ],
-    correctAnswer: 2,
-    explanation: "Giá trị cốt lõi của tư tưởng Hồ Chí Minh là sự gắn bó chặt chẽ giữa độc lập dân tộc và chủ nghĩa xã hội vì mục tiêu cao cả: hạnh phúc của nhân dân.",
-    category: 'y-nghia-lich-su',
-    difficulty: 'hard'
+    "correctAnswer": 0,
+    "explanation": "Thông điệp bám sát quan điểm Mác – Lênin, tư tưởng Hồ Chí Minh và chính sách hiện hành.",
+    "category": "ket-luan-lien-he",
+    "difficulty": "easy"
   }
 ];
 
 export const quizCategories = [
-  { id: 'tu-tuong-doc-lap', name: 'Tư tưởng độc lập dân tộc', color: 'bg-blue-500' },
-  { id: 'tu-tuong-xa-hoi', name: 'Tư tưởng xã hội chủ nghĩa', color: 'bg-red-500' },
-  { id: 'ket-hop-hai-tu-tuong', name: 'Kết hợp hai tư tưởng', color: 'bg-green-500' },
-  { id: 'van-dung-thuc-tien', name: 'Vận dụng thực tiễn', color: 'bg-purple-500' },
-  { id: 'y-nghia-lich-su', name: 'Ý nghĩa lịch sử', color: 'bg-orange-500' }
+  { id: 'mo-bai-gioi-thieu', name: 'Mở bài giới thiệu', color: 'bg-blue-500' },
+  { id: 'ban-chat-ton-giao', name: 'Bàn chắt tôn giáo', color: 'bg-red-500' },
+  { id: 'quan-diem-mac-lenin', name: 'Quan điểm Mác – Lênin', color: 'bg-green-500' },
+  { id: 'ton-giao-trong-qua-do', name: 'Tôn giáo trong quá độ', color: 'bg-purple-500' },
+  { id: 'chinh-sach-ton-giao', name: 'Chính sách tôn giáo', color: 'bg-orange-500' },
+  { id: 'ket-luan-lien-he', name: 'Kết luận liên hệ', color: 'bg-orange-500' }
 ];
 
 export const difficultyLevels = [
