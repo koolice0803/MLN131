@@ -38,23 +38,23 @@ const HomePage = () => {
   const keyPoints = [
     {
       icon: Target,
-      title: 'Mục tiêu nghiên cứu',
-      description: 'Tìm hiểu tư tưởng độc lập dân tộc và chủ nghĩa xã hội của Chủ tịch Hồ Chí Minh'
+      title: 'Quan điểm Mác-Lênin',
+      description: 'Bản chất, nguồn gốc và tính chất của tôn giáo theo quan điểm chủ nghĩa Mác-Lênin'
     },
     {
       icon: Calendar,
-      title: 'Quá trình hình thành',
-      description: 'Từ những năm đầu hoạt động cách mạng đến khi thành lập nước Việt Nam Dân chủ Cộng hòa'
+      title: 'Tôn giáo trong quá độ',
+      description: 'Đặc điểm tồn tại và vai trò của tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội'
     },
     {
       icon: Globe,
-      title: 'Bối cảnh lịch sử',
-      description: 'Thời kỳ phong trào giải phóng dân tộc và cách mạng xã hội chủ nghĩa thế giới'
+      title: 'Chính sách tôn giáo',
+      description: 'Quan điểm và chính sách của Đảng, Nhà nước về tôn giáo ở Việt Nam'
     },
     {
       icon: Users,
-      title: 'Ý nghĩa thời đại',
-      description: 'Tác động sâu sắc đến sự nghiệp giải phóng dân tộc và xây dựng chủ nghĩa xã hội'
+      title: 'Quan hệ dân tộc-tôn giáo',
+      description: 'Mối quan hệ hài hòa giữa các dân tộc và tôn giáo trong khối đại đoàn kết'
     }
   ]
 
@@ -118,7 +118,7 @@ const HomePage = () => {
               className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
               variants={itemVariants}
             >
-              <span className="text-gradient-solid">TƯ TƯỞNG HỒ CHÍ MINH</span>
+              <span className="text-gradient-solid">TÔN GIÁO</span>
               <br />
               <motion.span
                 className="text-3xl md:text-4xl text-gray-700"
@@ -126,7 +126,7 @@ const HomePage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.8 }}
               >
-                Độc lập dân tộc và Chủ nghĩa xã hội
+                trong thời kỳ quá độ lên Chủ nghĩa xã hội
               </motion.span>
             </motion.h1>
 
@@ -134,8 +134,8 @@ const HomePage = () => {
               className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Khám phá và tìm hiểu tư tưởng vĩ đại của Chủ tịch Hồ Chí Minh về độc lập dân tộc và chủ nghĩa xã hội,
-              với sự hỗ trợ của công nghệ hiện đại và trí tuệ nhân tạo.
+              Tìm hiểu quan điểm Mác-Lênin về tôn giáo, chính sách tôn giáo của Đảng và Nhà nước Việt Nam 
+              trong thời kỳ quá độ lên chủ nghĩa xã hội, với sự hỗ trợ của công nghệ AI hiện đại.
             </motion.p>
 
             <motion.div
@@ -147,7 +147,7 @@ const HomePage = () => {
                   to="/timeline"
                   className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 pulse-glow"
                 >
-                  Khám phá dòng thời gian
+                  Khám phá nội dung
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                 </Link>
               </motion.div>
@@ -177,10 +177,10 @@ const HomePage = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Những điểm quan trọng
+              Những nội dung chính
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Tìm hiểu về quá trình hình thành và phát triển tư tưởng của Chủ tịch Hồ Chí Minh
+              Khám phá các khía cạnh quan trọng về tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội
             </p>
           </motion.div>
 
@@ -272,7 +272,7 @@ const HomePage = () => {
               Hình ảnh lịch sử
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Những hình ảnh đặc trưng về cuộc đời và sự nghiệp của Chủ tịch Hồ Chí Minh
+              Những hình ảnh minh họa về lịch sử tôn giáo và chính sách tôn giáo ở Việt Nam
             </p>
           </motion.div>
 
@@ -287,21 +287,21 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="/images/img-hcm-tre.jpg"
+                  src="dist/images/anggen.jpg"
                   alt="Hồ Chí Minh thời trẻ"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <Globe className="w-6 h-6 mb-1" />
-                  <p className="text-xs font-semibold">Thời trẻ</p>
+                  <p className="text-xs font-semibold">Quan điểm Mác-Lênin</p>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Hồ Chí Minh thời trẻ</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Quan điểm Mác-Lênin về tôn giáo</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Hình ảnh Nguyễn Ái Quốc thời trẻ, khi bắt đầu hành trình tìm đường cứu nước
-                  và tiếp xúc với tư tưởng Mác-Lênin tại châu Âu.
+                  Tư tưởng Mác-Lênin về bản chất, nguồn gốc của tôn giáo và phương pháp
+                  giải quyết vấn đề tôn giáo trong xã hội xã hội chủ nghĩa.
                 </p>
               </div>
             </motion.div>
@@ -316,21 +316,21 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="/images/dcs-ra-doi.jpg"
+                  src="dist/images/luat.jpg"
                   alt="Thành lập Đảng Cộng sản Việt Nam"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <Flag className="w-6 h-6 mb-1" />
-                  <p className="text-xs font-semibold">Thành lập Đảng 1930</p>
+                  <p className="text-xs font-semibold">Chính sách tôn giáo</p>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Thành lập Đảng Cộng sản Việt Nam</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Chính sách tôn giáo của Đảng</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Ngày 3/2/1930, Hồ Chí Minh thành lập Đảng Cộng sản Việt Nam,
-                  đánh dấu sự kết hợp giữa chủ nghĩa yêu nước và chủ nghĩa xã hội.
+                  Quan điểm và chính sách của Đảng Cộng sản Việt Nam về tôn giáo,
+                  bảo đảm quyền tự do tín ngưỡng và phát huy giá trị tích cực.
                 </p>
               </div>
             </motion.div>
@@ -345,21 +345,21 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="/images/29.jpg"
+                  src="dist/images/thanhthat.webp"
                   alt="Tuyên ngôn độc lập 2/9/1945"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <Sword className="w-6 h-6 mb-1" />
-                  <p className="text-xs font-semibold">Tuyên ngôn độc lập</p>
+                  <p className="text-xs font-semibold">Tự do tín ngưỡng</p>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Tuyên ngôn độc lập 2/9/1945</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Quyền tự do tín ngưỡng, tôn giáo</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập tại Quảng trường Ba Đình,
-                  tuyên bố thành lập nước Việt Nam Dân chủ Cộng hòa.
+                  Hiến pháp và pháp luật Việt Nam bảo đảm quyền tự do tín ngưỡng, tôn giáo
+                  của công dân, tôn trọng sự lựa chọn của mỗi người.
                 </p>
               </div>
             </motion.div>
@@ -374,21 +374,21 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="/images/bac-ho-voi-nhan-dan.jpg"
+                  src="dist/images/phatdang.jpg"
                   alt="Hồ Chí Minh với nhân dân"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <Users className="w-6 h-6 mb-1" />
-                  <p className="text-xs font-semibold">Bác Hồ với nhân dân</p>
+                  <p className="text-xs font-semibold">Đại đoàn kết</p>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Hồ Chí Minh với nhân dân</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Khối đại đoàn kết dân tộc</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Hình ảnh Chủ tịch Hồ Chí Minh gần gũi với nhân dân,
-                  thể hiện tư tưởng "Dân là gốc" trong triết lý chính trị của Người.
+                  Đồng bào tôn giáo là bộ phận quan trọng của khối đại đoàn kết toàn dân tộc,
+                  cùng chung sống hòa bình và phát triển đất nước.
                 </p>
               </div>
             </motion.div>
@@ -403,21 +403,21 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="/images/img5.jpg"
+                  src="dist/images/ban do ton giao.jpeg"
                   alt="Chủ tịch Hồ Chí Minh"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <Star className="w-6 h-6 mb-1" />
-                  <p className="text-xs font-semibold">Bác Hồ</p>
+                  <p className="text-xs font-semibold">Tôn giáo VN</p>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Chủ tịch Hồ Chí Minh</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Tôn giáo ở Việt Nam hiện nay</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Chân dung Chủ tịch Hồ Chí Minh - người sáng lập ra tư tưởng độc lập dân tộc
-                  gắn liền với chủ nghĩa xã hội ở Việt Nam.
+                  Tình hình tôn giáo ở Việt Nam với 13 tôn giáo được công nhận,
+                  hơn 24 triệu tín đồ và 23.250 cơ sở thờ tự trên toàn quốc.
                 </p>
               </div>
             </motion.div>
@@ -432,21 +432,21 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="/images/di-san-ho-chi-minh.jpg"
+                  src="dist/images/tuthien.webp"
                   alt="Di sản tư tưởng Hồ Chí Minh"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-2 left-2 text-white">
                   <Heart className="w-6 h-6 mb-1" />
-                  <p className="text-xs font-semibold">Di sản tư tưởng</p>
+                  <p className="text-xs font-semibold">Hòa hợp tôn giáo</p>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Di sản tư tưởng Hồ Chí Minh</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Hòa hợp tôn giáo trong CNXH</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Tư tưởng Hồ Chí Minh tiếp tục là kim chỉ nam cho sự nghiệp
-                  xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa.
+                  Các tôn giáo ở Việt Nam chung sống hòa bình, đồng hành cùng dân tộc
+                  trong sự nghiệp xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa.
                 </p>
               </div>
             </motion.div>
@@ -469,10 +469,10 @@ const HomePage = () => {
               Tính năng AI sáng tạo
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              <span className="text-gradient">Trò chuyện với AI Lịch sử</span>
+              <span className="text-gradient">Trò chuyện với AI Tôn giáo & CNXH</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Trải nghiệm học tập tương tác độc đáo với AI Assistant được huấn luyện về tư tưởng Hồ Chí Minh
+              Trải nghiệm học tập tương tác độc đáo với AI Assistant được huấn luyện chuyên sâu về tôn giáo trong thời kỳ quá độ lên CNXH
             </p>
           </motion.div>
 
@@ -491,10 +491,10 @@ const HomePage = () => {
                     <Users className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">AI Chuyên gia tư tưởng</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">AI Chuyên gia tôn giáo</h3>
                     <p className="text-gray-600 text-sm">
-                      Trò chuyện với AI được huấn luyện chuyên sâu về tư tưởng Hồ Chí Minh,
-                      cung cấp thông tin chính xác và khách quan về di sản tư tưởng vĩ đại
+                      Trò chuyện với AI được huấn luyện chuyên sâu về tôn giáo trong thời kỳ quá độ lên CNXH,
+                      cung cấp thông tin chính xác theo quan điểm Mác-Lênin và chính sách của Đảng
                     </p>
                   </div>
                 </div>
@@ -506,10 +506,10 @@ const HomePage = () => {
                     <Globe className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Kiến thức phong phú</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Kiến thức chuyên sâu</h3>
                     <p className="text-gray-600 text-sm">
-                      Được huấn luyện trên các tác phẩm, bài viết và tài liệu
-                      về tư tưởng độc lập dân tộc và chủ nghĩa xã hội của Hồ Chí Minh
+                      Được huấn luyện trên các tài liệu về quan điểm Mác-Lênin về tôn giáo,
+                      chính sách tôn giáo và tình hình tôn giáo ở Việt Nam hiện nay
                     </p>
                   </div>
                 </div>
@@ -524,7 +524,7 @@ const HomePage = () => {
                     <h3 className="text-lg font-bold text-gray-900 mb-2">Tương tác thông minh</h3>
                     <p className="text-gray-600 text-sm">
                       Hỗ trợ giọng nói tiếng Việt, câu hỏi gợi ý thông minh
-                      và phân tích sâu sắc về tư tưởng Hồ Chí Minh
+                      và phân tích sâu sắc về các vấn đề tôn giáo trong thời kỳ quá độ
                     </p>
                   </div>
                 </div>
@@ -548,8 +548,8 @@ const HomePage = () => {
                     className="w-10 h-10 rounded-full border-2 border-white"
                   />
                   <div>
-                    <h4 className="font-semibold">AI Tư tưởng Hồ Chí Minh</h4>
-                    <p className="text-xs opacity-90">Trợ lý AI chuyên về tư tưởng Hồ Chí Minh</p>
+                    <h4 className="font-semibold">AI Tôn giáo & CNXH</h4>
+                    <p className="text-xs opacity-90">Trợ lý AI chuyên về tôn giáo trong thời kỳ quá độ lên CNXH</p>
                   </div>
                 </div>
 
@@ -557,8 +557,8 @@ const HomePage = () => {
                                     <div className="flex justify-start">
                     <div className="bg-gray-100 p-3 rounded-2xl rounded-bl-none max-w-xs">
                       <p className="text-sm text-gray-800">
-                        Xin chào! Tôi là AI Tư tưởng Hồ Chí Minh, được huấn luyện chuyên sâu về
-                        tư tưởng độc lập dân tộc và chủ nghĩa xã hội. Bạn muốn tìm hiểu về vấn đề gì?
+                        Xin chào! Tôi là AI Tôn giáo & CNXH, được huấn luyện chuyên sâu về
+                        tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội. Bạn muốn tìm hiểu về vấn đề gì?
                       </p>
                     </div>
                   </div>
@@ -566,7 +566,7 @@ const HomePage = () => {
                   <div className="flex justify-end">
                     <div className="bg-blue-500 text-white p-3 rounded-2xl rounded-br-none max-w-xs">
                       <p className="text-sm">
-                        Dạ, tư tưởng độc lập dân tộc của Bác Hồ được hình thành như thế nào ạ?
+                        Dạ, quan điểm Mác-Lênin về bản chất của tôn giáo là gì ạ?
                       </p>
                     </div>
                   </div>
@@ -574,8 +574,8 @@ const HomePage = () => {
                                     <div className="flex justify-start">
                     <div className="bg-gray-100 p-3 rounded-2xl rounded-bl-none max-w-xs">
                       <p className="text-sm text-gray-800">
-                        Tư tưởng độc lập dân tộc của Bác Hồ hình thành từ khát vọng giải phóng
-                        dân tộc khỏi ách thống trị thực dân, phong kiến...
+                        Theo Mác-Lênin, tôn giáo là hình thái ý thức xã hội phản ánh hư ảo hiện thực,
+                        có nguồn gốc từ sự bất lực trước thiên nhiên và xã hội...
                       </p>
                     </div>
                   </div>
@@ -584,7 +584,7 @@ const HomePage = () => {
                 <div className="p-4 border-t border-gray-100">
                   <div className="flex items-center space-x-2">
                     <div className="flex-1 bg-gray-100 rounded-xl p-3">
-                      <p className="text-sm text-gray-500">Đặt câu hỏi về tư tưởng Hồ Chí Minh...</p>
+                      <p className="text-sm text-gray-500">Đặt câu hỏi về tôn giáo trong thời kỳ quá độ...</p>
                     </div>
                     <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
                       <ArrowRight className="w-5 h-5 text-white" />
@@ -650,34 +650,34 @@ const HomePage = () => {
 
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 mb-8">
               <blockquote className="text-xl md:text-2xl text-gray-800 font-medium italic leading-relaxed">
-                "Tư tưởng độc lập dân tộc và chủ nghĩa xã hội của Hồ Chí Minh là sự kết hợp hài hòa
-                giữa chủ nghĩa yêu nước và chủ nghĩa xã hội khoa học trong điều kiện cụ thể của Việt Nam."
+                "Tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội là vấn đề phức tạp, 
+                cần được giải quyết theo quan điểm Mác-Lênin và chính sách của Đảng, Nhà nước."
               </blockquote>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">Độc lập</div>
+                <div className="text-3xl font-bold text-blue-600">Quan điểm</div>
+                <div className="text-gray-600">Mác-Lênin</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600">Chính sách</div>
+                <div className="text-gray-600">Tôn giáo</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600">Đại đoàn kết</div>
                 <div className="text-gray-600">Dân tộc</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600">Chủ nghĩa</div>
-                <div className="text-gray-600">Xã hội</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">Kết hợp</div>
-                <div className="text-gray-600">Hài hòa</div>
               </div>
             </div>
 
             <div className="text-lg text-gray-700 leading-relaxed space-y-4">
               <p>
-                <strong>Tầm quan trọng của tư tưởng:</strong>
+                <strong>Tầm quan trọng của vấn đề:</strong>
               </p>
               <ul className="text-left space-y-2 max-w-2xl mx-auto pl-32">
-                <li>• Định hướng con đường cách mạng Việt Nam</li>
-                <li>• Kết hợp yêu nước với chủ nghĩa quốc tế</li>
-                <li>• Nền tảng xây dựng chủ nghĩa xã hội ở Việt Nam</li>
+                <li>• Bảo đảm quyền tự do tín ngưỡng, tôn giáo</li>
+                <li>• Phát huy giá trị tích cực của tôn giáo</li>
+                <li>• Củng cố khối đại đoàn kết toàn dân tộc</li>
               </ul>
             </div>
 
