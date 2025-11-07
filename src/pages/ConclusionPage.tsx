@@ -8,7 +8,7 @@ import {
   Quote,
   ShieldCheck,
   SmilePlus,
-  StarIcon
+  StarIcon,
 } from "lucide-react";
 
 const ConclusionPage = () => {
@@ -131,12 +131,9 @@ const ConclusionPage = () => {
                 >
                   <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 leading-relaxed">
-                    Tôn giáo là một hiện tượng xã hội – văn hóa đặc thù, phản
-                    ánh những khát vọng tinh thần của con người trước hiện thực
-                    khách quan. Dưới góc nhìn Mác – Lênin, tôn giáo không chỉ là
-                    “tiếng thở dài của sinh vật bị áp bức”, mà còn là sản phẩm
-                    của những điều kiện tự nhiên, kinh tế, xã hội và nhận thức
-                    trong từng giai đoạn lịch sử.
+                    Tôn giáo là một hiện tượng xã hội và văn hóa đặc biệt, phản
+                    ánh những khát vọng tinh thần của con người trong mọi thời
+                    kỳ lịch sử.
                   </span>
                 </motion.li>
                 <motion.li
@@ -147,12 +144,10 @@ const ConclusionPage = () => {
                 >
                   <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 leading-relaxed">
-                    Trong thời kỳ quá độ lên chủ nghĩa xã hội, tôn giáo vẫn tồn
-                    tại như một nhu cầu tinh thần của nhân dân. Đảng và Nhà nước
-                    ta luôn khẳng định quan điểm tôn trọng tự do tín ngưỡng,
-                    đồng thời chủ động phát huy các giá trị đạo đức, văn hóa
-                    tích cực của tôn giáo nhằm củng cố khối đại đoàn kết dân
-                    tộc.
+                    Dưới góc nhìn của chủ nghĩa Mác – Lênin, tôn giáo không chỉ
+                    là “tiếng thở dài của sinh vật bị áp bức”, mà còn là sản
+                    phẩm của những điều kiện tự nhiên, kinh tế và nhận thức của
+                    xã hội.
                   </span>
                 </motion.li>
                 <motion.li
@@ -163,10 +158,22 @@ const ConclusionPage = () => {
                 >
                   <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-700 leading-relaxed">
-                    Chính sách tôn giáo của Việt Nam ngày nay thể hiện rõ tinh
-                    thần nhân văn, dân chủ và đoàn kết toàn dân – hướng đến mục
-                    tiêu: “Tốt đời, đẹp đạo – sống phúc âm giữa lòng dân tộc –
-                    phụng sự Tổ quốc, phục vụ nhân dân.”
+                    Trong thời kỳ quá độ lên chủ nghĩa xã hội, tôn giáo vẫn tồn
+                    tại như một nhu cầu tinh thần chính đáng của nhân dân.
+                  </span>
+                </motion.li>
+                <motion.li
+                  className="flex items-start space-x-3"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 leading-relaxed">
+                    Đảng và Nhà nước ta luôn khẳng định tôn trọng tự do tín
+                    ngưỡng, đồng thời phát huy các giá trị đạo đức và văn hóa
+                    tích cực của tôn giáo, góp phần củng cố khối đại đoàn kết
+                    toàn dân tộc.
                   </span>
                 </motion.li>
               </ul>
