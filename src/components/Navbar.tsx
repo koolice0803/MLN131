@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   BookMarked,
   BookOpen,
+  Bot,
   FileText,
   Home,
   Menu,
@@ -42,6 +43,12 @@ const navigationItems = [
     label: "Tài liệu và tin tức",
     icon: BookOpen,
     description: "Tài liệu tham khảo",
+  },
+  {
+    path: "/aiusage",
+    label: "Về sử dụng AI",
+    icon: Bot,
+    description: "Thông tin về việc sử dụng AI trên site",
   },
 ];
 

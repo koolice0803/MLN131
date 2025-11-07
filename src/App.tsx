@@ -1,15 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
-import './App.css'
-import Navbar from './components/Navbar'
-import HomePage from './pages/HomePage'
-import TimelinePage from './pages/TimelinePage'
-import AnalysisPage from './pages/AnalysisPage'
-import ConclusionPage from './pages/ConclusionPage'
-import QuizPage from './pages/QuizPage'
-import DocumentsPage from './pages/DocumentsPage'
-import ScrollToTop from './components/ScrollToTop'
-import AIHistoricalAssistant from './components/AIHistoricalAssistant'
+import { AnimatePresence } from "framer-motion";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
+import AIHistoricalAssistant from "./components/AIHistoricalAssistant";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+import AnalysisPage from "./pages/AnalysisPage";
+import ConclusionPage from "./pages/ConclusionPage";
+import DocumentsPage from "./pages/DocumentsPage";
+import HomePage from "./pages/HomePage";
+import QuizPage from "./pages/QuizPage";
+import AIUsagePage from "./pages/AIUsage";
 
 function App() {
   return (
@@ -20,11 +20,12 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/timeline" element={<TimelinePage />} />
+            {/* <Route path="/timeline" element={<TimelinePage />} /> */}
             <Route path="/analysis" element={<AnalysisPage />} />
             <Route path="/conclusion" element={<ConclusionPage />} />
             <Route path="/quiz" element={<QuizPage />} />
             <Route path="/documents" element={<DocumentsPage />} />
+            <Route path="/aiusage" element={<AIUsagePage />} />
           </Routes>
         </AnimatePresence>
       </div>
@@ -32,7 +33,7 @@ function App() {
       {/* AI Historical Assistant - Available on all pages */}
       <AIHistoricalAssistant />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
