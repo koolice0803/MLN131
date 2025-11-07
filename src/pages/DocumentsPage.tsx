@@ -1,82 +1,93 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  FileText,
-  ExternalLink,
-  Calendar,
-  Filter,
-  Search,
-  BookOpen,
-  Scale,
-  ScrollText,
-  UserCheck,
   BarChart3,
+  BookOpen,
+  Calendar,
+  ExternalLink,
+  FileText,
+  Filter,
+  InfoIcon,
+  Newspaper,
+  ScrollText,
+  Search,
   Star,
-  // Clock, // Unused for now
-  Globe
-} from 'lucide-react'
-import { historicalDocuments } from '../data/documentsData'
-import type { HistoricalDocument } from '../types'
+} from "lucide-react";
+import { useState } from "react";
+import { documentsList } from "../data/documentsData";
+import type { Document } from "../types";
 
 const DocumentsPage = () => {
-  const [selectedType, setSelectedType] = useState<string>('all')
-  const [selectedImportance, setSelectedImportance] = useState<string>('all')
-  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedType, setSelectedType] = useState<string>("all");
+  const [selectedImportance, setSelectedImportance] = useState<string>("all");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const documentTypes = [
-    { value: 'all', label: 'Tất cả', icon: FileText },
-    { value: 'agreement', label: 'Tác phẩm', icon: Scale },
-    { value: 'law', label: 'Văn kiện', icon: ScrollText },
-    { value: 'report', label: 'Báo cáo', icon: BarChart3 },
-    { value: 'memoir', label: 'Hồi ký', icon: UserCheck },
-    { value: 'study', label: 'Nghiên cứu', icon: BookOpen }
-  ]
+    { value: "all", label: "Tất cả", icon: FileText },
+    { value: "law", label: "Văn kiện", icon: ScrollText },
+    { value: "report", label: "Báo cáo", icon: BookOpen },
+    { value: "news", label: "Tin tức", icon: Newspaper },
+    { value: "study", label: "Bài nghiên cứu", icon: BookOpen },
+  ];
 
   const importanceLevels = [
-    { value: 'all', label: 'Tất cả mức độ', color: 'bg-gray-500' },
-    { value: 'primary', label: 'Chính', color: 'bg-red-500' },
-    { value: 'secondary', label: 'Phụ', color: 'bg-yellow-500' },
-    { value: 'supplementary', label: 'Bổ sung', color: 'bg-green-500' }
-  ]
+    { value: "all", label: "Tất cả mức độ", color: "bg-orange-500" },
+    { value: "high", label: "Cao", color: "bg-yellow-500" },
+    { value: "medium", label: "Trung bình", color: "bg-lime-500" },
+    { value: "low", label: "Thường", color: "bg-gray-500" },
+  ];
 
-  const filteredDocuments = historicalDocuments.filter(doc => {
-    const matchesType = selectedType === 'all' || doc.type === selectedType
-    const matchesImportance = selectedImportance === 'all' || doc.importance === selectedImportance
-    const matchesSearch = searchTerm === '' ||
+  const filteredDocuments = documentsList.filter((doc) => {
+    const matchesType = selectedType === "all" || doc.type === selectedType;
+    const matchesImportance =
+      selectedImportance === "all" || doc.importance === selectedImportance;
+    const matchesSearch =
+      searchTerm === "" ||
       doc.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.description.toLowerCase().includes(searchTerm.toLowerCase())
+      doc.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-    return matchesType && matchesImportance && matchesSearch
-  })
+    return matchesType && matchesImportance && matchesSearch;
+  });
 
-  const getDocumentIcon = (type: HistoricalDocument['type']) => {
+  const getDocumentIcon = (type: Document["type"]) => {
     switch (type) {
-      case 'agreement': return Scale
-      case 'law': return ScrollText
-      case 'report': return BarChart3
-      case 'memoir': return UserCheck
-      case 'study': return BookOpen
-      default: return FileText
+      case "law":
+        return ScrollText;
+      case "report":
+        return BarChart3;
+      case "news":
+        return Newspaper;
+      case "study":
+        return BookOpen;
+      default:
+        return FileText;
     }
-  }
+  };
 
-  const getImportanceColor = (importance: HistoricalDocument['importance']) => {
+  const getImportanceColor = (importance: Document["importance"]) => {
     switch (importance) {
-      case 'primary': return 'border-red-500 bg-red-50'
-      case 'secondary': return 'border-yellow-500 bg-yellow-50'
-      case 'supplementary': return 'border-green-500 bg-green-50'
-      default: return 'border-gray-500 bg-gray-50'
+      case "high":
+        return "border-yellow-500 bg-yellow-100";
+      case "medium":
+        return "border-lime-500 bg-lime-100";
+      case "low":
+        return "border-gray-500 bg-gray-100";
+      default:
+        return "border-gray-500 bg-gray-50";
     }
-  }
+  };
 
-  const getImportanceBadge = (importance: HistoricalDocument['importance']) => {
+  const getImportanceBadge = (importance: Document["importance"]) => {
     switch (importance) {
-      case 'primary': return { label: 'Chính', color: 'bg-red-500 text-white' }
-      case 'secondary': return { label: 'Phụ', color: 'bg-yellow-500 text-white' }
-      case 'supplementary': return { label: 'Bổ sung', color: 'bg-green-500 text-white' }
-      default: return { label: 'Khác', color: 'bg-gray-500 text-white' }
+      case "high":
+        return { label: "Cao", color: "bg-yellow-500 text-white" };
+      case "medium":
+        return { label: "Trung Bình", color: "bg-lime-500 text-white" };
+      case "low":
+        return { label: "Thường", color: "bg-gray-500 text-white" };
+      default:
+        return { label: "Khác", color: "bg-gray-500 text-white" };
     }
-  }
+  };
 
   return (
     <div className="min-h-screen pt-16 bg-gradient-to-br from-orange-50 via-white to-lime-50">
@@ -90,14 +101,16 @@ const DocumentsPage = () => {
         >
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-800 text-sm font-medium mb-6">
             <BookOpen className="w-4 h-4 mr-2" />
-            Tài liệu tham khảo
+            Tài liệu và tin tức tham khảo
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            <span className="text-gradient">Nguồn tài liệu tham khảo</span>
+            <span className="text-gradient">
+              Nguồn tài liệu và tin tức tham khảo
+            </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Tổng hợp các tác phẩm, văn kiện và nghiên cứu học thuật đáng tin cậy
-            về tư tưởng Hồ Chí Minh.
+            Tổng hợp các tài liệu, văn kiện, báo cáo, nghiên cứu học thuật đáng
+            tin cậy và tin tức liên quan đến chủ đề tôn giáo Việt Nam.
           </p>
         </motion.div>
 
@@ -210,17 +223,15 @@ const DocumentsPage = () => {
               return (
                 <motion.div
                   key={document.id}
-                  className={`bg-white rounded-2xl shadow-lg hover-lift cursor-pointer border-l-4 ${getImportanceColor(
+                  className={`rounded-2xl shadow-lg hover-lift cursor-pointer border-l-4 ${getImportanceColor(
                     document.importance
                   )} document-card overflow-hidden`}
                   initial={{ opacity: 0, y: 30, scale: 0.9 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -30, scale: 0.9 }}
                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    type: "spring",
-                    stiffness: 200,
+                    duration: 0.3,
+                    delay: 0,
                   }}
                   whileHover={{
                     scale: 1.02,
@@ -234,7 +245,7 @@ const DocumentsPage = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
                         <motion.div
-                          className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg"
+                          className="w-12 h-12 bg-gradient-to-br from-orange-500 to-lime-600 rounded-xl flex items-center justify-center shadow-lg"
                           whileHover={{ scale: 1.1, rotate: 10 }}
                           transition={{ type: "spring", stiffness: 400 }}
                         >
@@ -270,21 +281,7 @@ const DocumentsPage = () => {
                     {/* Footer */}
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                       <div className="flex items-center space-x-2">
-                        {document.type === "agreement" && (
-                          <Scale className="w-4 h-4 text-orange-600" />
-                        )}
-                        {document.type === "law" && (
-                          <ScrollText className="w-4 h-4 text-lime-600" />
-                        )}
-                        {document.type === "report" && (
-                          <BarChart3 className="w-4 h-4 text-green-600" />
-                        )}
-                        {document.type === "memoir" && (
-                          <UserCheck className="w-4 h-4 text-orange-600" />
-                        )}
-                        {document.type === "study" && (
-                          <BookOpen className="w-4 h-4 text-indigo-600" />
-                        )}
+                        <Icon />
                         <span className="text-sm font-medium text-gray-700 capitalize">
                           {
                             documentTypes.find((t) => t.value === document.type)
@@ -358,22 +355,19 @@ const DocumentsPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">
-                {historicalDocuments.length}
+                {documentsList.length}
               </div>
               <div className="text-lime-100">Tổng số tài liệu</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">
-                {
-                  historicalDocuments.filter((d) => d.importance === "primary")
-                    .length
-                }
+                {documentsList.filter((d) => d.importance === "high").length}
               </div>
-              <div className="text-lime-100">Tài liệu chính</div>
+              <div className="text-lime-100">Tài liệu quan trọng</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">
-                {historicalDocuments.filter((d) => d.url).length}
+                {documentsList.filter((d) => d.url).length}
               </div>
               <div className="text-lime-100">Có liên kết</div>
             </div>
@@ -396,22 +390,22 @@ const DocumentsPage = () => {
         >
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-4">
-              <Globe className="w-6 h-6 text-orange-600" />
+              <InfoIcon className="w-6 h-6 text-orange-600" />
               <h3 className="text-xl font-bold text-gray-900">
                 Lưu ý về tài liệu
               </h3>
             </div>
             <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Các tài liệu được sưu tập và phân loại dựa trên mức độ tin cậy và
-              giá trị lịch sử. Tài liệu "Chính" là những nguồn có giá trị cao
-              nhất, "Phụ" hỗ trợ phân tích, và "Bổ sung" cung cấp thông tin tham
-              khảo thêm.
+              giá trị lịch sử. Tài liệu mức độ quan trọng "Cao" là những nguồn
+              có giá trị cao nhất, "Trung bình" là các tài liệu hỗ trợ phân
+              tích, và "Thường" nhằm cung cấp thông tin tham khảo thêm.
             </p>
           </div>
         </motion.div>
       </div>
     </div>
   );
-}
+};
 
-export default DocumentsPage
+export default DocumentsPage;

@@ -39,9 +39,9 @@ const navigationItems = [
   },
   {
     path: "/documents",
-    label: "Tài liệu",
+    label: "Tài liệu và tin tức",
     icon: BookOpen,
-    description: "Nguồn tham khảo",
+    description: "Tài liệu tham khảo",
   },
 ];
 

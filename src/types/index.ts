@@ -4,17 +4,17 @@ export interface TimelineEvent {
   title: string;
   description: string;
   details: string[];
-  category: 'political' | 'military' | 'social' | 'international';
+  category: "political" | "military" | "social" | "international";
 }
 
-export interface HistoricalDocument {
+export interface Document {
   id: string;
   title: string;
   date: string;
-  type: 'agreement' | 'law' | 'report' | 'memoir' | 'study';
+  type: "law" | "report" | "news" | "study";
   description: string;
   url?: string;
-  importance: 'primary' | 'secondary' | 'supplementary';
+  importance: "high" | "medium" | "low";
 }
 
 export interface AnalysisPoint {
