@@ -287,7 +287,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="src/assets/images/anggen.jpg"
+                  src="../src/assets/anggen.jpg"
                   alt="Quan điểm"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -316,7 +316,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="src/assets/images/luat.jpg"
+                  src="../src/assets/luat.jpg"
                   alt="Thành lập Đảng Cộng sản Việt Nam"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -345,7 +345,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="src/assets/images/thanhthat.webp"
+                  src="../src/assets/thanhthat.webp"
                   alt="Tuyên ngôn độc lập 2/9/1945"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -374,7 +374,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="src/assets/images/phatdang.jpg"
+                  src="../src/assets/phatdang.jpg"
                   alt="Hồ Chí Minh với nhân dân"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -403,7 +403,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="src/assets/images/ban do ton giao.jpeg"
+                  src="../src/assets/ban do ton giao.jpeg"
                   alt="Chủ tịch Hồ Chí Minh"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -432,7 +432,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="src/assets/images/tuthien.webp"
+                  src="../src/assets/tuthien.webp"
                   alt="Di sản tư tưởng Hồ Chí Minh"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
