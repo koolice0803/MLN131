@@ -216,7 +216,7 @@ const DocumentsPage = () => {
         {/* Documents Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence>
-            {filteredDocuments.map((document, index) => {
+            {filteredDocuments.map((document) => {
               const Icon = getDocumentIcon(document.type);
               const importanceBadge = getImportanceBadge(document.importance);
 
