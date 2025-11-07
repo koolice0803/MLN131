@@ -88,7 +88,7 @@ const Navbar = () => {
                     className={`flex items-center space-x-2 px-4 py-2 rounded transition-all duration-300 ${
                       isActive
                         ? "bg-gradient-to-r from-orange-500 to-lime-600 text-white shadow-lg"
-                        : "text-orange-800 hover:bg-gray-100"
+                        : "text-orange-800 hover:bg-orange-200"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

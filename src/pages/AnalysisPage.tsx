@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import {
   AlertCircle,
-  Book,
   Bookmark,
   BookMarked,
   ChevronDown,
@@ -13,7 +12,7 @@ import {
   Sparkle,
   TrendingUp,
   Users,
-  XCircle
+  XCircle,
 } from "lucide-react";
 import { useState } from "react";
 import { analysisData } from "../data/analysisData";
@@ -28,26 +27,26 @@ const AnalysisPage = () => {
       id: "viewpoint1",
       label: "1. Quan điểm Mác – Lênin về tôn giáo",
       color: "from-orange-500 to-yellow-400",
-      icon: Book,
+      icon: BookMarked,
     },
     {
       id: "viewpoint2",
       label: "2. Tôn giáo ở Việt Nam hiện nay",
       color: "from-lime-600 to-green-500",
-      icon: Book,
+      icon: BookMarked,
     },
     {
       id: "viewpoint3",
       label:
         "3. Chính sách & quan hệ dân tộc – tôn giáo trong thời kỳ quá độ lên CNXH",
       color: "from-red-600 to-purple-500",
-      icon: Book,
+      icon: BookMarked,
     },
     {
       id: "all",
       label: "Hiển thị tất cả",
       color: "from-blue-600 to-aqua-500",
-      icon: Book,
+      icon: BookMarked,
     },
   ];
 
@@ -138,7 +137,7 @@ const AnalysisPage = () => {
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <Icon className="w-6 h-6" />
+                      <Icon className="w-6 h-6 flex-shrink-0" />
                       <span className="font-medium">{viewpoint.label}</span>
                     </div>
                   </button>

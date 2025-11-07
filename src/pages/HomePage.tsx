@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import Anggen from '../assets/anggen.jpg'
-import Luat from '../assets/luat.jpg'
-import Thanhthat from '../assets/thanhthat.webp'
-import Phatdang from '../assets/phatdang.jpg'
-import BanDoTonGiao from '../assets/ban-do-ton-giao.jpeg'
-import TuThien from '../assets/tuthien.webp'
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Anggen from "../assets/anggen.jpg";
+import Luat from "../assets/luat.jpg";
+import Thanhthat from "../assets/thanhthat.webp";
+import Phatdang from "../assets/phatdang.jpg";
+import BanDoTonGiao from "../assets/ban-do-ton-giao.jpeg";
+import TuThien from "../assets/tuthien.webp";
 import {
   ArrowRight,
   Calendar,
@@ -18,8 +18,8 @@ import {
   Award,
   Flag,
   Star,
-  Sword
-} from 'lucide-react'
+  Sword,
+} from "lucide-react";
 
 const HomePage = () => {
   const containerVariants = {
@@ -28,54 +28,58 @@ const HomePage = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  }
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1
-    }
-  }
+      opacity: 1,
+    },
+  };
 
   const keyPoints = [
     {
       icon: Target,
-      title: 'Quan điểm Mác-Lênin',
-      description: 'Bản chất, nguồn gốc và tính chất của tôn giáo theo quan điểm chủ nghĩa Mác-Lênin'
+      title: "Quan điểm Mác-Lênin",
+      description:
+        "Bản chất, nguồn gốc và tính chất của tôn giáo theo quan điểm chủ nghĩa Mác-Lênin",
     },
     {
       icon: Calendar,
-      title: 'Tôn giáo trong quá độ',
-      description: 'Đặc điểm tồn tại và vai trò của tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội'
+      title: "Tôn giáo trong quá độ",
+      description:
+        "Đặc điểm tồn tại và vai trò của tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội",
     },
     {
       icon: Globe,
-      title: 'Chính sách tôn giáo',
-      description: 'Quan điểm và chính sách của Đảng, Nhà nước về tôn giáo ở Việt Nam'
+      title: "Chính sách tôn giáo",
+      description:
+        "Quan điểm và chính sách của Đảng, Nhà nước về tôn giáo ở Việt Nam",
     },
     {
       icon: Users,
-      title: 'Quan hệ dân tộc-tôn giáo',
-      description: 'Mối quan hệ hài hòa giữa các dân tộc và tôn giáo trong khối đại đoàn kết'
-    }
-  ]
+      title: "Quan hệ dân tộc-tôn giáo",
+      description:
+        "Mối quan hệ hài hòa giữa các dân tộc và tôn giáo trong khối đại đoàn kết",
+    },
+  ];
 
   // const features = [
   //   {
   //     icon: BookOpen,
   //     title: 'Tài liệu đầy đủ',
   //     description: 'Dựa trên các nguồn tài liệu lịch sử chính thức và đáng tin cậy',
-  //     color: 'from-blue-500 to-cyan-500'
+  //     color: 'from-orange-500 to-cyan-500'
   //   },
   //   {
   //     icon: Lightbulb,
   //     title: 'Công nghệ hiện đại',
   //     description: 'Ứng dụng AI và công nghệ web để tăng trải nghiệm học tập',
-  //     color: 'from-purple-500 to-pink-500'
+  //     color: 'from-lime-500 to-pink-500'
   //   },
   //   {
   //     icon: Heart,
@@ -98,9 +102,9 @@ const HomePage = () => {
         <div className="absolute inset-0 animated-bg opacity-15"></div>
 
         {/* Floating decorative elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 float-animation"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-orange-400 to-lime-500 rounded-full opacity-20 float-animation"></div>
         <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-br from-red-400 to-yellow-500 rounded-full opacity-25 float-animation-delayed"></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full opacity-30 float-animation"></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-gradient-to-br from-green-400 to-orange-500 rounded-full opacity-30 float-animation"></div>
 
         {/* Vietnam flag inspired decorative elements */}
         <div className="absolute top-1/3 right-10 w-8 h-8 vietnam-flag-colors rounded-full opacity-40 float-animation-delayed"></div>
@@ -114,9 +118,9 @@ const HomePage = () => {
         >
           <div className="text-center">
             <motion.div variants={itemVariants}>
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-medium mb-8">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-lime-100 text-orange-800 text-sm font-medium mb-8">
                 <Award className="w-4 h-4 mr-2" />
-                Sản phẩm môn học Lịch sử Đảng Cộng sản Việt Nam
+                Sản phẩm môn học Scientific socialism MLN131
               </div>
             </motion.div>
 
@@ -140,28 +144,35 @@ const HomePage = () => {
               className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Tìm hiểu quan điểm Mác-Lênin về tôn giáo, chính sách tôn giáo của Đảng và Nhà nước Việt Nam 
-              trong thời kỳ quá độ lên chủ nghĩa xã hội, với sự hỗ trợ của công nghệ AI hiện đại.
+              Tìm hiểu quan điểm Mác-Lênin về tôn giáo, chính sách tôn giáo của
+              Đảng và Nhà nước Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã
+              hội, với sự hỗ trợ của công nghệ AI hiện đại.
             </motion.p>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               variants={itemVariants}
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
-                  to="/timeline"
-                  className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 pulse-glow"
+                  to="/analysis"
+                  className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-lime-600 text-white font-semibold rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 pulse-glow"
                 >
                   Khám phá nội dung
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                 </Link>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Link
                   to="/quiz"
-                  className="group inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-purple-500 hover:text-purple-600 hover:bg-purple-50 hover:-translate-y-1 transition-all duration-300"
+                  className="group inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-lime-500 hover:text-lime-600 hover:bg-lime-50 hover:-translate-y-1 transition-all duration-300"
                 >
                   Kiểm tra kiến thức
                   <Award className="ml-2 w-5 h-5 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300" />
@@ -186,13 +197,14 @@ const HomePage = () => {
               Những nội dung chính
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Khám phá các khía cạnh quan trọng về tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội
+              Khám phá các khía cạnh quan trọng về tôn giáo trong thời kỳ quá độ
+              lên chủ nghĩa xã hội
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {keyPoints.map((point, index) => {
-              const Icon = point.icon
+              const Icon = point.icon;
               return (
                 <motion.div
                   key={index}
@@ -202,7 +214,7 @@ const HomePage = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg pulse-glow">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-lime-600 rounded-xl flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 shadow-lg pulse-glow">
                     <Icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -212,14 +224,14 @@ const HomePage = () => {
                     {point.description}
                   </p>
                 </motion.div>
-              )
+              );
             })}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      {/* <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -278,7 +290,8 @@ const HomePage = () => {
               Hình ảnh lịch sử
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Những hình ảnh minh họa về lịch sử tôn giáo và chính sách tôn giáo ở Việt Nam
+              Những hình ảnh minh họa về lịch sử tôn giáo và chính sách tôn giáo
+              ở Việt Nam
             </p>
           </motion.div>
 
@@ -304,10 +317,13 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Quan điểm Mác-Lênin về tôn giáo</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Quan điểm Mác-Lênin về tôn giáo
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Tư tưởng Mác-Lênin về bản chất, nguồn gốc của tôn giáo và phương pháp
-                  giải quyết vấn đề tôn giáo trong xã hội xã hội chủ nghĩa.
+                  Tư tưởng Mác-Lênin về bản chất, nguồn gốc của tôn giáo và
+                  phương pháp giải quyết vấn đề tôn giáo trong xã hội xã hội chủ
+                  nghĩa.
                 </p>
               </div>
             </motion.div>
@@ -333,10 +349,13 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Chính sách tôn giáo của Đảng</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Chính sách tôn giáo của Đảng
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Quan điểm và chính sách của Đảng Cộng sản Việt Nam về tôn giáo,
-                  bảo đảm quyền tự do tín ngưỡng và phát huy giá trị tích cực.
+                  Quan điểm và chính sách của Đảng Cộng sản Việt Nam về tôn
+                  giáo, bảo đảm quyền tự do tín ngưỡng và phát huy giá trị tích
+                  cực.
                 </p>
               </div>
             </motion.div>
@@ -362,10 +381,13 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Quyền tự do tín ngưỡng, tôn giáo</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Quyền tự do tín ngưỡng, tôn giáo
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Hiến pháp và pháp luật Việt Nam bảo đảm quyền tự do tín ngưỡng, tôn giáo
-                  của công dân, tôn trọng sự lựa chọn của mỗi người.
+                  Hiến pháp và pháp luật Việt Nam bảo đảm quyền tự do tín
+                  ngưỡng, tôn giáo của công dân, tôn trọng sự lựa chọn của mỗi
+                  người.
                 </p>
               </div>
             </motion.div>
@@ -391,10 +413,12 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Khối đại đoàn kết dân tộc</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Khối đại đoàn kết dân tộc
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Đồng bào tôn giáo là bộ phận quan trọng của khối đại đoàn kết toàn dân tộc,
-                  cùng chung sống hòa bình và phát triển đất nước.
+                  Đồng bào tôn giáo là bộ phận quan trọng của khối đại đoàn kết
+                  toàn dân tộc, cùng chung sống hòa bình và phát triển đất nước.
                 </p>
               </div>
             </motion.div>
@@ -420,7 +444,9 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Tôn giáo ở Việt Nam hiện nay</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Tôn giáo ở Việt Nam hiện nay
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Tình hình tôn giáo ở Việt Nam với 13 tôn giáo được công nhận,
                   hơn 24 triệu tín đồ và 23.250 cơ sở thờ tự trên toàn quốc.
@@ -449,10 +475,13 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Hòa hợp tôn giáo trong CNXH</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Hòa hợp tôn giáo trong CNXH
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Các tôn giáo ở Việt Nam chung sống hòa bình, đồng hành cùng dân tộc
-                  trong sự nghiệp xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa.
+                  Các tôn giáo ở Việt Nam chung sống hòa bình, đồng hành cùng
+                  dân tộc trong sự nghiệp xây dựng và bảo vệ Tổ quốc xã hội chủ
+                  nghĩa.
                 </p>
               </div>
             </motion.div>
@@ -461,7 +490,7 @@ const HomePage = () => {
       </section>
 
       {/* AI Assistant Feature Section */}
-      <section className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <section className="py-20 bg-gradient-to-br from-indigo-50 via-lime-50 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -470,15 +499,18 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-lime-100 to-pink-100 text-lime-800 text-sm font-medium mb-6">
               <Users className="w-4 h-4 mr-2" />
               Tính năng AI sáng tạo
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              <span className="text-gradient">Trò chuyện với AI Tôn giáo & CNXH</span>
+              <span className="text-gradient">
+                Trò chuyện với AI Tôn giáo & CNXH
+              </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Trải nghiệm học tập tương tác độc đáo với AI Assistant được huấn luyện chuyên sâu về tôn giáo trong thời kỳ quá độ lên CNXH
+              Trải nghiệm học tập tương tác độc đáo với AI Assistant được huấn
+              luyện chuyên sâu về tôn giáo trong thời kỳ quá độ lên CNXH
             </p>
           </motion.div>
 
@@ -491,16 +523,19 @@ const HomePage = () => {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-                            <div className="bg-white rounded-2xl p-6 shadow-lg hover-lift">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover-lift">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-lime-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Users className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">AI Chuyên gia tôn giáo</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      AI Chuyên gia tôn giáo
+                    </h3>
                     <p className="text-gray-600 text-sm">
-                      Trò chuyện với AI được huấn luyện chuyên sâu về tôn giáo trong thời kỳ quá độ lên CNXH,
-                      cung cấp thông tin chính xác theo quan điểm Mác-Lênin và chính sách của Đảng
+                      Trò chuyện với AI được huấn luyện chuyên sâu về tôn giáo
+                      trong thời kỳ quá độ lên CNXH, cung cấp thông tin chính
+                      xác theo quan điểm Mác-Lênin và chính sách của Đảng
                     </p>
                   </div>
                 </div>
@@ -508,14 +543,17 @@ const HomePage = () => {
 
               <div className="bg-white rounded-2xl p-6 shadow-lg hover-lift">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Globe className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Kiến thức chuyên sâu</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      Kiến thức chuyên sâu
+                    </h3>
                     <p className="text-gray-600 text-sm">
-                      Được huấn luyện trên các tài liệu về quan điểm Mác-Lênin về tôn giáo,
-                      chính sách tôn giáo và tình hình tôn giáo ở Việt Nam hiện nay
+                      Được huấn luyện trên các tài liệu về quan điểm Mác-Lênin
+                      về tôn giáo, chính sách tôn giáo và tình hình tôn giáo ở
+                      Việt Nam hiện nay
                     </p>
                   </div>
                 </div>
@@ -523,14 +561,17 @@ const HomePage = () => {
 
               <div className="bg-white rounded-2xl p-6 shadow-lg hover-lift">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-lime-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Star className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Tương tác thông minh</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      Tương tác thông minh
+                    </h3>
                     <p className="text-gray-600 text-sm">
-                      Hỗ trợ giọng nói tiếng Việt, câu hỏi gợi ý thông minh
-                      và phân tích sâu sắc về các vấn đề tôn giáo trong thời kỳ quá độ
+                      Hỗ trợ giọng nói tiếng Việt, câu hỏi gợi ý thông minh và
+                      phân tích sâu sắc về các vấn đề tôn giáo trong thời kỳ quá
+                      độ
                     </p>
                   </div>
                 </div>
@@ -546,8 +587,8 @@ const HomePage = () => {
               className="relative"
             >
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-                                {/* Mock chat interface */}
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 flex items-center space-x-3">
+                {/* Mock chat interface */}
+                <div className="bg-gradient-to-r from-orange-500 to-lime-600 text-white p-4 flex items-center space-x-3">
                   <img
                     src="/images/img2.svg"
                     alt="AI Lịch sử Việt Nam"
@@ -555,33 +596,38 @@ const HomePage = () => {
                   />
                   <div>
                     <h4 className="font-semibold">AI Tôn giáo & CNXH</h4>
-                    <p className="text-xs opacity-90">Trợ lý AI chuyên về tôn giáo trong thời kỳ quá độ lên CNXH</p>
+                    <p className="text-xs opacity-90">
+                      Trợ lý AI chuyên về tôn giáo trong thời kỳ quá độ lên CNXH
+                    </p>
                   </div>
                 </div>
 
                 <div className="p-4 space-y-4 h-64 overflow-hidden">
-                                    <div className="flex justify-start">
+                  <div className="flex justify-start">
                     <div className="bg-gray-100 p-3 rounded-2xl rounded-bl-none max-w-xs">
                       <p className="text-sm text-gray-800">
-                        Xin chào! Tôi là AI Tôn giáo & CNXH, được huấn luyện chuyên sâu về
-                        tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội. Bạn muốn tìm hiểu về vấn đề gì?
+                        Xin chào! Tôi là AI Tôn giáo & CNXH, được huấn luyện
+                        chuyên sâu về tôn giáo trong thời kỳ quá độ lên chủ
+                        nghĩa xã hội. Bạn muốn tìm hiểu về vấn đề gì?
                       </p>
                     </div>
                   </div>
 
                   <div className="flex justify-end">
-                    <div className="bg-blue-500 text-white p-3 rounded-2xl rounded-br-none max-w-xs">
+                    <div className="bg-orange-500 text-white p-3 rounded-2xl rounded-br-none max-w-xs">
                       <p className="text-sm">
-                        Dạ, quan điểm Mác-Lênin về bản chất của tôn giáo là gì ạ?
+                        Dạ, quan điểm Mác-Lênin về bản chất của tôn giáo là gì
+                        ạ?
                       </p>
                     </div>
                   </div>
 
-                                    <div className="flex justify-start">
+                  <div className="flex justify-start">
                     <div className="bg-gray-100 p-3 rounded-2xl rounded-bl-none max-w-xs">
                       <p className="text-sm text-gray-800">
-                        Theo Mác-Lênin, tôn giáo là hình thái ý thức xã hội phản ánh hư ảo hiện thực,
-                        có nguồn gốc từ sự bất lực trước thiên nhiên và xã hội...
+                        Theo Mác-Lênin, tôn giáo là hình thái ý thức xã hội phản
+                        ánh hư ảo hiện thực, có nguồn gốc từ sự bất lực trước
+                        thiên nhiên và xã hội...
                       </p>
                     </div>
                   </div>
@@ -590,9 +636,11 @@ const HomePage = () => {
                 <div className="p-4 border-t border-gray-100">
                   <div className="flex items-center space-x-2">
                     <div className="flex-1 bg-gray-100 rounded-xl p-3">
-                      <p className="text-sm text-gray-500">Đặt câu hỏi về tôn giáo trong thời kỳ quá độ...</p>
+                      <p className="text-sm text-gray-500">
+                        Đặt câu hỏi về tôn giáo trong thời kỳ quá độ...
+                      </p>
                     </div>
-                    <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
+                    <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center">
                       <ArrowRight className="w-5 h-5 text-white" />
                     </div>
                   </div>
@@ -601,7 +649,7 @@ const HomePage = () => {
 
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-70 float-animation"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-green-400 to-blue-500 rounded-full opacity-60 float-animation-delayed"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-green-400 to-orange-500 rounded-full opacity-60 float-animation-delayed"></div>
             </motion.div>
           </div>
 
@@ -617,13 +665,13 @@ const HomePage = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Sẵn sàng khám phá lịch sử với AI?
               </h3>
-                            <p className="text-gray-600 mb-6">
-                Nhấn vào biểu tượng chat ở góc dưới bên phải để bắt đầu cuộc trò chuyện
-                với AI và khám phá những câu chuyện lịch sử hấp dẫn!
+              <p className="text-gray-600 mb-6">
+                Nhấn vào biểu tượng chat ở góc dưới bên phải để bắt đầu cuộc trò
+                chuyện với AI và khám phá những câu chuyện lịch sử hấp dẫn!
               </p>
               <div className="flex items-center justify-center space-x-4">
                 <div className="flex items-center text-sm text-gray-500">
-                  <div className="w-4 h-4 bg-blue-500 rounded-full mr-2"></div>
+                  <div className="w-4 h-4 bg-orange-500 rounded-full mr-2"></div>
                   Trò chuyện tự nhiên
                 </div>
                 <div className="flex items-center text-sm text-gray-500">
@@ -631,7 +679,7 @@ const HomePage = () => {
                   Hỗ trợ giọng nói
                 </div>
                 <div className="flex items-center text-sm text-gray-500">
-                  <div className="w-4 h-4 bg-purple-500 rounded-full mr-2"></div>
+                  <div className="w-4 h-4 bg-lime-500 rounded-full mr-2"></div>
                   Phân tích thông minh
                 </div>
               </div>
@@ -654,24 +702,31 @@ const HomePage = () => {
               Vấn đề nghiên cứu
             </h2>
 
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 mb-8">
+            <div className="bg-gradient-to-br from-orange-50 to-lime-50 rounded-2xl p-8 mb-8">
               <blockquote className="text-xl md:text-2xl text-gray-800 font-medium italic leading-relaxed">
-                "Tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội là vấn đề phức tạp, 
-                cần được giải quyết theo quan điểm Mác-Lênin và chính sách của Đảng, Nhà nước."
+                "Tôn giáo trong thời kỳ quá độ lên chủ nghĩa xã hội là vấn đề
+                phức tạp, cần được giải quyết theo quan điểm Mác-Lênin và chính
+                sách của Đảng, Nhà nước."
               </blockquote>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">Quan điểm</div>
+                <div className="text-3xl font-bold text-orange-600">
+                  Quan điểm
+                </div>
                 <div className="text-gray-600">Mác-Lênin</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600">Chính sách</div>
+                <div className="text-3xl font-bold text-lime-600">
+                  Chính sách
+                </div>
                 <div className="text-gray-600">Tôn giáo</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">Đại đoàn kết</div>
+                <div className="text-3xl font-bold text-green-600">
+                  Đại đoàn kết
+                </div>
                 <div className="text-gray-600">Dân tộc</div>
               </div>
             </div>
@@ -687,13 +742,10 @@ const HomePage = () => {
               </ul>
             </div>
 
-            <motion.div
-              className="mt-12"
-              whileHover={{ scale: 1.05 }}
-            >
+            <motion.div className="mt-12" whileHover={{ scale: 1.05 }}>
               <Link
-                to="/timeline"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                to="/analysis"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-orange-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
               >
                 Bắt đầu khám phá
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -703,7 +755,7 @@ const HomePage = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
