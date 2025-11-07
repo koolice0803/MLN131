@@ -1,49 +1,65 @@
-import { useState, useMemo } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Sparkles, Filter, X, BookOpen, Clock, Users, ArrowRight } from 'lucide-react'
-import { timelineEvents } from '../data/timelineData'
-import { historicalDocuments } from '../data/documentsData'
-import { analysisData } from '../data/analysisData'
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  ArrowRight,
+  BookOpen,
+  Clock,
+  Filter,
+  Search,
+  Sparkles,
+  Users,
+  X,
+} from "lucide-react";
+import { useMemo, useState } from "react";
+import { analysisData } from "../data/analysisData";
+import { documentsList } from "../data/documentsData";
+import { timelineEvents } from "../data/timelineData";
 
 interface SearchResult {
-  id: string
-  title: string
-  content: string
-  section: 'timeline' | 'documents' | 'analysis'
-  relevance: number
-  metadata?: any
+  id: string;
+  title: string;
+  content: string;
+  section: "timeline" | "documents" | "analysis";
+  relevance: number;
+  metadata?: any;
 }
 
 const SearchEngine = () => {
-  const [query, setQuery] = useState('')
-  const [selectedSection, setSelectedSection] = useState<'all' | 'timeline' | 'documents' | 'analysis'>('all')
-  const [showAiSuggestions, setShowAiSuggestions] = useState(false)
+  const [query, setQuery] = useState("");
+  const [selectedSection, setSelectedSection] = useState<
+    "all" | "timeline" | "documents" | "analysis"
+  >("all");
+  const [showAiSuggestions, setShowAiSuggestions] = useState(false);
 
   const aiSuggestions = [
     "Tư tưởng độc lập dân tộc của Hồ Chí Minh",
     "Chủ nghĩa xã hội trong tư tưởng Hồ Chí Minh",
     "Sự kết hợp hai tư tưởng cốt lõi",
     "Ý nghĩa lịch sử của tư tưởng Hồ Chí Minh",
-    "Tuyên ngôn độc lập và tư tưởng dân tộc"
-  ]
+    "Tuyên ngôn độc lập và tư tưởng dân tộc",
+  ];
 
   const searchResults = useMemo(() => {
-    if (!query.trim()) return []
+    if (!query.trim()) return [];
 
-    const results: SearchResult[] = []
-    const searchTerm = query.toLowerCase()
+    const results: SearchResult[] = [];
+    const searchTerm = query.toLowerCase();
 
     // Search in timeline events
-    if (selectedSection === 'all' || selectedSection === 'timeline') {
-      timelineEvents.forEach(event => {
-        let relevance = 0
-        let content = event.description
+    if (selectedSection === "all" || selectedSection === "timeline") {
+      timelineEvents.forEach((event) => {
+        let relevance = 0;
+        let content = event.description;
 
-        if (event.title.toLowerCase().includes(searchTerm)) relevance += 3
-        if (event.description.toLowerCase().includes(searchTerm)) relevance += 2
-        if (event.details.some(detail => detail.toLowerCase().includes(searchTerm))) {
-          relevance += 1
-          content += ' ' + event.details.join(' ')
+        if (event.title.toLowerCase().includes(searchTerm)) relevance += 3;
+        if (event.description.toLowerCase().includes(searchTerm))
+          relevance += 2;
+        if (
+          event.details.some((detail) =>
+            detail.toLowerCase().includes(searchTerm)
+          )
+        ) {
+          relevance += 1;
+          content += " " + event.details.join(" ");
         }
 
         if (relevance > 0) {
@@ -51,51 +67,64 @@ const SearchEngine = () => {
             id: event.id,
             title: event.title,
             content: event.description,
-            section: 'timeline',
+            section: "timeline",
             relevance,
-            metadata: { date: event.date, category: event.category }
-          })
+            metadata: { date: event.date, category: event.category },
+          });
         }
-      })
+      });
     }
 
     // Search in documents
-    if (selectedSection === 'all' || selectedSection === 'documents') {
-      historicalDocuments.forEach(doc => {
-        let relevance = 0
+    if (selectedSection === "all" || selectedSection === "documents") {
+      documentsList.forEach((doc) => {
+        let relevance = 0;
 
-        if (doc.title.toLowerCase().includes(searchTerm)) relevance += 3
-        if (doc.description.toLowerCase().includes(searchTerm)) relevance += 2
-        if (doc.type.toLowerCase().includes(searchTerm)) relevance += 1
+        if (doc.title.toLowerCase().includes(searchTerm)) relevance += 3;
+        if (doc.description.toLowerCase().includes(searchTerm)) relevance += 2;
+        if (doc.type.toLowerCase().includes(searchTerm)) relevance += 1;
 
         if (relevance > 0) {
           results.push({
             id: doc.id,
             title: doc.title,
             content: doc.description,
-            section: 'documents',
+            section: "documents",
             relevance,
-            metadata: { type: doc.type, importance: doc.importance, date: doc.date }
-          })
+            metadata: {
+              type: doc.type,
+              importance: doc.importance,
+              date: doc.date,
+            },
+          });
         }
-      })
+      });
     }
 
     // Search in analysis
-    if (selectedSection === 'all' || selectedSection === 'analysis') {
-      analysisData.forEach(analysis => {
-        let relevance = 0
-        let content = analysis.title
+    if (selectedSection === "all" || selectedSection === "analysis") {
+      analysisData.forEach((analysis) => {
+        let relevance = 0;
+        let content = analysis.title;
 
-        if (analysis.category.toLowerCase().includes(searchTerm)) relevance += 3
-        if (analysis.title.toLowerCase().includes(searchTerm)) relevance += 2
-        if (analysis.content.some(item => item.toLowerCase().includes(searchTerm))) {
-          relevance += 2
-          content += ' ' + analysis.content.join(' ')
+        if (analysis.category.toLowerCase().includes(searchTerm))
+          relevance += 3;
+        if (analysis.title.toLowerCase().includes(searchTerm)) relevance += 2;
+        if (
+          analysis.content.some((item) =>
+            item.toLowerCase().includes(searchTerm)
+          )
+        ) {
+          relevance += 2;
+          content += " " + analysis.content.join(" ");
         }
-        if (analysis.evidence.some(item => item.toLowerCase().includes(searchTerm))) {
-          relevance += 1
-          content += ' ' + analysis.evidence.join(' ')
+        if (
+          analysis.evidence.some((item) =>
+            item.toLowerCase().includes(searchTerm)
+          )
+        ) {
+          relevance += 1;
+          content += " " + analysis.evidence.join(" ");
         }
 
         if (relevance > 0) {
@@ -103,49 +132,62 @@ const SearchEngine = () => {
             id: analysis.id,
             title: analysis.category,
             content: analysis.title,
-            section: 'analysis',
+            section: "analysis",
             relevance,
-            metadata: { category: analysis.category }
-          })
+            metadata: { category: analysis.category },
+          });
         }
-      })
+      });
     }
 
-    return results.sort((a, b) => b.relevance - a.relevance).slice(0, 10)
-  }, [query, selectedSection])
+    return results.sort((a, b) => b.relevance - a.relevance).slice(0, 10);
+  }, [query, selectedSection]);
 
   const highlightText = (text: string, searchTerm: string) => {
-    if (!searchTerm.trim()) return text
+    if (!searchTerm.trim()) return text;
 
-    const regex = new RegExp(`(${searchTerm})`, 'gi')
-    const parts = text.split(regex)
+    const regex = new RegExp(`(${searchTerm})`, "gi");
+    const parts = text.split(regex);
 
     return parts.map((part, index) =>
       regex.test(part) ? (
-        <span key={index} className="bg-yellow-200 text-yellow-900 px-1 rounded">
+        <span
+          key={index}
+          className="bg-yellow-200 text-yellow-900 px-1 rounded"
+        >
           {part}
         </span>
-      ) : part
-    )
-  }
+      ) : (
+        part
+      )
+    );
+  };
 
-  const getSectionIcon = (section: SearchResult['section']) => {
+  const getSectionIcon = (section: SearchResult["section"]) => {
     switch (section) {
-      case 'timeline': return Clock
-      case 'documents': return BookOpen
-      case 'analysis': return Users
-      default: return Search
+      case "timeline":
+        return Clock;
+      case "documents":
+        return BookOpen;
+      case "analysis":
+        return Users;
+      default:
+        return Search;
     }
-  }
+  };
 
-  const getSectionLabel = (section: SearchResult['section']) => {
+  const getSectionLabel = (section: SearchResult["section"]) => {
     switch (section) {
-      case 'timeline': return 'Dòng thời gian'
-      case 'documents': return 'Tài liệu'
-      case 'analysis': return 'Phân tích'
-      default: return 'Khác'
+      case "timeline":
+        return "Dòng thời gian";
+      case "documents":
+        return "Tài liệu";
+      case "analysis":
+        return "Phân tích";
+      default:
+        return "Khác";
     }
-  }
+  };
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
@@ -157,7 +199,9 @@ const SearchEngine = () => {
         <button
           onClick={() => setShowAiSuggestions(!showAiSuggestions)}
           className={`flex items-center space-x-2 px-3 py-1 rounded-lg text-sm font-medium transition-colors duration-200 ${
-            showAiSuggestions ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            showAiSuggestions
+              ? "bg-purple-100 text-purple-700"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           }`}
         >
           <Sparkles className="w-4 h-4" />
@@ -177,7 +221,7 @@ const SearchEngine = () => {
         />
         {query && (
           <button
-            onClick={() => setQuery('')}
+            onClick={() => setQuery("")}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
             <X className="w-5 h-5" />
@@ -189,17 +233,17 @@ const SearchEngine = () => {
       <div className="flex items-center space-x-2 mb-6">
         <Filter className="w-4 h-4 text-gray-500" />
         <div className="flex space-x-1">
-          {['all', 'timeline', 'documents', 'analysis'].map((section) => (
+          {["all", "timeline", "documents", "analysis"].map((section) => (
             <button
               key={section}
               onClick={() => setSelectedSection(section as any)}
               className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors duration-200 ${
                 selectedSection === section
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'text-gray-600 hover:bg-gray-100'
+                  ? "bg-blue-100 text-blue-700"
+                  : "text-gray-600 hover:bg-gray-100"
               }`}
             >
-              {section === 'all' ? 'Tất cả' : getSectionLabel(section as any)}
+              {section === "all" ? "Tất cả" : getSectionLabel(section as any)}
             </button>
           ))}
         </div>
@@ -210,14 +254,16 @@ const SearchEngine = () => {
         {showAiSuggestions && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 border border-purple-200"
           >
             <div className="flex items-center space-x-2 mb-3">
               <Sparkles className="w-4 h-4 text-purple-600" />
-              <span className="text-sm font-medium text-purple-900">Gợi ý tìm kiếm từ AI</span>
+              <span className="text-sm font-medium text-purple-900">
+                Gợi ý tìm kiếm từ AI
+              </span>
             </div>
             <div className="space-y-2">
               {aiSuggestions.map((suggestion, index) => (
@@ -244,15 +290,17 @@ const SearchEngine = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-4 text-sm text-gray-600">
-              Tìm thấy <span className="font-semibold text-blue-600">{searchResults.length}</span> kết quả
-              {query && (
-                <span> cho "{highlightText(query, query)}"</span>
-              )}
+              Tìm thấy{" "}
+              <span className="font-semibold text-blue-600">
+                {searchResults.length}
+              </span>{" "}
+              kết quả
+              {query && <span> cho "{highlightText(query, query)}"</span>}
             </div>
 
             <div className="space-y-3 max-h-96 overflow-y-auto">
               {searchResults.map((result, index) => {
-                const Icon = getSectionIcon(result.section)
+                const Icon = getSectionIcon(result.section);
                 return (
                   <motion.div
                     key={result.id}
@@ -268,8 +316,13 @@ const SearchEngine = () => {
                           {getSectionLabel(result.section)}
                         </span>
                         <div className="flex">
-                          {Array.from({ length: Math.min(result.relevance, 3) }).map((_, i) => (
-                            <div key={i} className="w-1 h-1 bg-yellow-400 rounded-full mx-0.5" />
+                          {Array.from({
+                            length: Math.min(result.relevance, 3),
+                          }).map((_, i) => (
+                            <div
+                              key={i}
+                              className="w-1 h-1 bg-yellow-400 rounded-full mx-0.5"
+                            />
                           ))}
                         </div>
                       </div>
@@ -298,14 +351,16 @@ const SearchEngine = () => {
                       </div>
                     )}
                   </motion.div>
-                )
+                );
               })}
 
               {searchResults.length === 0 && query && (
                 <div className="text-center py-8 text-gray-500">
                   <Search className="w-12 h-12 mx-auto mb-3 text-gray-300" />
                   <p>Không tìm thấy kết quả phù hợp</p>
-                  <p className="text-sm">Thử sử dụng từ khóa khác hoặc AI suggestions</p>
+                  <p className="text-sm">
+                    Thử sử dụng từ khóa khác hoặc AI suggestions
+                  </p>
                 </div>
               )}
             </div>
@@ -313,7 +368,7 @@ const SearchEngine = () => {
         )}
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};
 
-export default SearchEngine
+export default SearchEngine;
