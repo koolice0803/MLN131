@@ -1,5 +1,11 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import Anggen from '../assets/anggen.jpg'
+import Luat from '../assets/luat.jpg'
+import Thanhthat from '../assets/thanhthat.webp'
+import Phatdang from '../assets/phatdang.jpg'
+import BanDoTonGiao from '../assets/ban-do-ton-giao.jpeg'
+import TuThien from '../assets/tuthien.webp'
 import {
   ArrowRight,
   Calendar,
@@ -287,7 +293,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="../src/assets/anggen.jpg"
+                  src={Anggen}
                   alt="Quan điểm"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -316,7 +322,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="../src/assets/luat.jpg"
+                  src={Luat}
                   alt="Thành lập Đảng Cộng sản Việt Nam"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -345,7 +351,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="../src/assets/thanhthat.webp"
+                  src={Thanhthat}
                   alt="Tuyên ngôn độc lập 2/9/1945"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -374,7 +380,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="../src/assets/phatdang.jpg"
+                  src={Phatdang}
                   alt="Hồ Chí Minh với nhân dân"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -403,7 +409,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="../src/assets/ban do ton giao.jpeg"
+                  src={BanDoTonGiao}
                   alt="Chủ tịch Hồ Chí Minh"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -432,7 +438,7 @@ const HomePage = () => {
             >
               <div className="h-48 relative overflow-hidden">
                 <img
-                  src="../src/assets/tuthien.webp"
+                  src={TuThien}
                   alt="Di sản tư tưởng Hồ Chí Minh"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
