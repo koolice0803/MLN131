@@ -122,45 +122,49 @@ const QuizPage = () => {
     return (
       <div className="min-h-screen pt-16 bg-gradient-to-br from-red-50 via-white to-red-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Lỗi: Không tìm thấy câu hỏi</h1>
+          <h1 className="text-2xl font-bold text-red-600 mb-4">
+            Lỗi: Không tìm thấy câu hỏi
+          </h1>
           <button
             onClick={resetQuiz}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            className="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700"
           >
             Quay lại
           </button>
         </div>
       </div>
-    )
+    );
   }
 
   const calculateScore = () => {
-    const correctAnswers = quizResults.filter(result => result.isCorrect).length
+    const correctAnswers = quizResults.filter(
+      (result) => result.isCorrect
+    ).length;
     return {
       correct: correctAnswers,
       total: totalQuestions,
-      percentage: Math.round((correctAnswers / totalQuestions) * 100)
-    }
-  }
+      percentage: Math.round((correctAnswers / totalQuestions) * 100),
+    };
+  };
 
   const getScoreColor = (percentage: number) => {
-    if (percentage >= 80) return 'text-green-600'
-    if (percentage >= 60) return 'text-yellow-600'
-    return 'text-red-600'
-  }
+    if (percentage >= 80) return "text-lime-600";
+    if (percentage >= 60) return "text-yellow-600";
+    return "text-red-600";
+  };
 
   const getScoreMessage = (percentage: number) => {
-    if (percentage >= 90) return 'Xuất sắc! 🎉'
-    if (percentage >= 80) return 'Tốt lắm! 👏'
-    if (percentage >= 70) return 'Khá tốt! 👍'
-    if (percentage >= 60) return 'Ổn! 😊'
-    return 'Cần cố gắng thêm! 💪'
-  }
+    if (percentage >= 90) return "Xuất sắc! 🎉";
+    if (percentage >= 80) return "Tốt lắm! 👏";
+    if (percentage >= 70) return "Khá tốt! 👍";
+    if (percentage >= 60) return "Ổn! 😊";
+    return "Cần cố gắng thêm! 💪";
+  };
 
   // Quiz Setup Screen
   if (!quizStarted) {
     return (
-      <div className="min-h-screen pt-16 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div className="min-h-screen pt-16 bg-gradient-to-br from-orange-50 via-white to-lime-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <motion.div
             className="text-center mb-12"
@@ -168,7 +172,7 @@ const QuizPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-800 text-sm font-medium mb-6">
               <Brain className="w-4 h-4 mr-2" />
               Câu hỏi ôn tập
             </div>
@@ -176,7 +180,8 @@ const QuizPage = () => {
               <span className="text-gradient">Kiểm tra kiến thức</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ôn tập và kiểm tra hiểu biết về tư tưởng Hồ Chí Minh thông qua {quizQuestions.length} câu hỏi tương tác
+              Ôn tập và kiểm tra hiểu biết về tư tưởng Hồ Chí Minh thông qua{" "}
+              {quizQuestions.length} câu hỏi tương tác
             </p>
           </motion.div>
 
@@ -193,20 +198,24 @@ const QuizPage = () => {
 
             {/* Category Filter */}
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Chọn chủ đề:</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Chọn chủ đề:
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <button
-                  onClick={() => setSelectedCategory('all')}
+                  onClick={() => setSelectedCategory("all")}
                   className={`p-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    selectedCategory === 'all'
-                      ? 'bg-gray-800 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    selectedCategory === "all"
+                      ? "bg-gray-800 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
                   Tất cả ({quizQuestions.length})
                 </button>
                 {quizCategories.map((category) => {
-                  const count = quizQuestions.filter(q => q.category === category.id).length
+                  const count = quizQuestions.filter(
+                    (q) => q.category === category.id
+                  ).length;
                   return (
                     <button
                       key={category.id}
@@ -214,26 +223,28 @@ const QuizPage = () => {
                       className={`p-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                         selectedCategory === category.id
                           ? `${category.color} text-white`
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       }`}
                     >
                       {category.name} ({count})
                     </button>
-                  )
+                  );
                 })}
               </div>
             </div>
 
             {/* Difficulty Filter */}
             <div className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Chọn độ khó:</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Chọn độ khó:
+              </h3>
               <div className="flex gap-3">
                 <button
-                  onClick={() => setSelectedDifficulty('all')}
+                  onClick={() => setSelectedDifficulty("all")}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    selectedDifficulty === 'all'
-                      ? 'bg-gray-800 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    selectedDifficulty === "all"
+                      ? "bg-gray-800 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
                   Tất cả
@@ -245,7 +256,7 @@ const QuizPage = () => {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       selectedDifficulty === level.id
                         ? `${level.color} text-white`
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                   >
                     {level.name}
@@ -257,37 +268,41 @@ const QuizPage = () => {
             {/* Quiz Info */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <motion.div
-                className="bg-blue-50 rounded-xl p-4 text-center hover-lift"
+                className="bg-orange-50 rounded-xl p-4 text-center hover-lift"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
-                <Target className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-blue-600">{filteredQuestions.length}</div>
-                <div className="text-blue-700 text-sm">Câu hỏi</div>
+                <Target className="w-8 h-8 text-orange-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-orange-600">
+                  {filteredQuestions.length}
+                </div>
+                <div className="text-orange-700 text-sm">Câu hỏi</div>
               </motion.div>
               <motion.div
-                className="bg-green-50 rounded-xl p-4 text-center hover-lift"
+                className="bg-lime-50 rounded-xl p-4 text-center hover-lift"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <Clock className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-green-600">~{filteredQuestions.length * 2}</div>
-                <div className="text-green-700 text-sm">Phút</div>
+                <Clock className="w-8 h-8 text-lime-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-lime-600">
+                  ~{filteredQuestions.length * 2}
+                </div>
+                <div className="text-lime-700 text-sm">Phút</div>
               </motion.div>
               <motion.div
-                className="bg-purple-50 rounded-xl p-4 text-center hover-lift"
+                className="bg-lime-50 rounded-xl p-4 text-center hover-lift"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <Trophy className="w-8 h-8 text-purple-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-purple-600">80%+</div>
-                <div className="text-purple-700 text-sm">Đạt tốt</div>
+                <Trophy className="w-8 h-8 text-lime-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-lime-600">80%+</div>
+                <div className="text-lime-700 text-sm">Đạt tốt</div>
               </motion.div>
             </div>
 
@@ -296,7 +311,7 @@ const QuizPage = () => {
               <motion.button
                 onClick={startQuiz}
                 disabled={filteredQuestions.length === 0}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-lime-600 text-white font-semibold rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -313,15 +328,15 @@ const QuizPage = () => {
           </motion.div>
         </div>
       </div>
-    )
+    );
   }
 
   // Quiz Completed Screen
   if (quizCompleted) {
-    const score = calculateScore()
+    const score = calculateScore();
 
     return (
-      <div className="min-h-screen pt-16 bg-gradient-to-br from-green-50 via-white to-blue-50">
+      <div className="min-h-screen pt-16 bg-gradient-to-br from-lime-50 via-white to-orange-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <motion.div
             className="text-center"
@@ -330,7 +345,7 @@ const QuizPage = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="bg-white rounded-2xl shadow-xl p-8">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-lime-500 to-orange-600 rounded-full flex items-center justify-center">
                 <Trophy className="w-10 h-10 text-white" />
               </div>
 
@@ -338,7 +353,11 @@ const QuizPage = () => {
                 Hoàn thành bài kiểm tra!
               </h1>
 
-              <div className={`text-6xl font-bold mb-4 ${getScoreColor(score.percentage)}`}>
+              <div
+                className={`text-6xl font-bold mb-4 ${getScoreColor(
+                  score.percentage
+                )}`}
+              >
                 {score.percentage}%
               </div>
 
@@ -348,20 +367,26 @@ const QuizPage = () => {
 
               {/* Detailed Results */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-green-50 rounded-xl p-4">
-                  <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-green-600">{score.correct}</div>
-                  <div className="text-green-700 text-sm">Câu đúng</div>
+                <div className="bg-lime-50 rounded-xl p-4">
+                  <CheckCircle className="w-8 h-8 text-lime-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-lime-600">
+                    {score.correct}
+                  </div>
+                  <div className="text-lime-700 text-sm">Câu đúng</div>
                 </div>
                 <div className="bg-red-50 rounded-xl p-4">
                   <XCircle className="w-8 h-8 text-red-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-red-600">{score.total - score.correct}</div>
+                  <div className="text-2xl font-bold text-red-600">
+                    {score.total - score.correct}
+                  </div>
                   <div className="text-red-700 text-sm">Câu sai</div>
                 </div>
-                <div className="bg-blue-50 rounded-xl p-4">
-                  <Clock className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-blue-600">{formatTime(timeSpent)}</div>
-                  <div className="text-blue-700 text-sm">Thời gian</div>
+                <div className="bg-orange-50 rounded-xl p-4">
+                  <Clock className="w-8 h-8 text-orange-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-orange-600">
+                    {formatTime(timeSpent)}
+                  </div>
+                  <div className="text-orange-700 text-sm">Thời gian</div>
                 </div>
               </div>
 
@@ -374,13 +399,13 @@ const QuizPage = () => {
                   </div>
                 )}
                 {score.percentage >= 80 && (
-                  <div className="flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full">
+                  <div className="flex items-center px-4 py-2 bg-lime-100 text-lime-800 rounded-full">
                     <Award className="w-4 h-4 mr-2" />
                     Đạt mức tốt
                   </div>
                 )}
                 {timeSpent < totalQuestions * 60 && (
-                  <div className="flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full">
+                  <div className="flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full">
                     <Clock className="w-4 h-4 mr-2" />
                     Nhanh chóng
                   </div>
@@ -391,14 +416,16 @@ const QuizPage = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={resetQuiz}
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-600 to-lime-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
                 >
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Làm lại
                 </button>
                 <button
-                  onClick={() => {/* Navigate to study materials */}}
-                  className="inline-flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
+                  onClick={() => {
+                    /* Navigate to study materials */
+                  }}
+                  className="inline-flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-orange-500 hover:text-orange-600 transition-all duration-300"
                 >
                   <BookOpen className="w-4 h-4 mr-2" />
                   Ôn tập thêm
@@ -408,12 +435,12 @@ const QuizPage = () => {
           </motion.div>
         </div>
       </div>
-    )
+    );
   }
 
   // Quiz Question Screen
   return (
-    <div className="min-h-screen pt-16 bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+    <div className="min-h-screen pt-16 bg-gradient-to-br from-lime-50 via-white to-orange-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -421,9 +448,7 @@ const QuizPage = () => {
             <h1 className="text-2xl font-bold text-gray-900">
               Câu {currentQuestionIndex + 1}/{totalQuestions}
             </h1>
-            <div className="text-gray-600">
-              {formatTime(timeSpent)}
-            </div>
+            <div className="text-gray-600">{formatTime(timeSpent)}</div>
           </div>
           <button
             onClick={resetQuiz}
@@ -436,9 +461,11 @@ const QuizPage = () => {
         {/* Progress Bar */}
         <div className="w-full bg-gray-200 rounded-full h-2 mb-8">
           <motion.div
-            className="bg-gradient-to-r from-purple-500 to-indigo-600 h-2 rounded-full"
+            className="bg-gradient-to-r from-lime-500 to-orange-600 h-2 rounded-full"
             initial={{ width: 0 }}
-            animate={{ width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%` }}
+            animate={{
+              width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`,
+            }}
             transition={{ duration: 0.5 }}
           />
         </div>
@@ -456,15 +483,31 @@ const QuizPage = () => {
             {/* Question Category & Difficulty */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-3">
-                <div className={`px-3 py-1 rounded-full text-sm font-medium text-white ${
-                  quizCategories.find(cat => cat.id === currentQuestion.category)?.color || 'bg-gray-500'
-                }`}>
-                  {quizCategories.find(cat => cat.id === currentQuestion.category)?.name}
+                <div
+                  className={`px-3 py-1 rounded-full text-sm font-medium text-white ${
+                    quizCategories.find(
+                      (cat) => cat.id === currentQuestion.category
+                    )?.color || "bg-gray-500"
+                  }`}
+                >
+                  {
+                    quizCategories.find(
+                      (cat) => cat.id === currentQuestion.category
+                    )?.name
+                  }
                 </div>
-                <div className={`px-3 py-1 rounded-full text-sm font-medium text-white ${
-                  difficultyLevels.find(level => level.id === currentQuestion.difficulty)?.color || 'bg-gray-500'
-                }`}>
-                  {difficultyLevels.find(level => level.id === currentQuestion.difficulty)?.name}
+                <div
+                  className={`px-3 py-1 rounded-full text-sm font-medium text-white ${
+                    difficultyLevels.find(
+                      (level) => level.id === currentQuestion.difficulty
+                    )?.color || "bg-gray-500"
+                  }`}
+                >
+                  {
+                    difficultyLevels.find(
+                      (level) => level.id === currentQuestion.difficulty
+                    )?.name
+                  }
                 </div>
               </div>
             </div>
@@ -477,20 +520,26 @@ const QuizPage = () => {
             {/* Options */}
             <div className="space-y-4">
               {currentQuestion.options.map((option, index) => {
-                let buttonClass = "w-full p-4 text-left border-2 rounded-xl transition-all duration-300 "
+                let buttonClass =
+                  "w-full p-4 text-left border-2 rounded-xl transition-all duration-300 ";
 
                 if (showResult) {
                   if (index === currentQuestion.correctAnswer) {
-                    buttonClass += "border-green-500 bg-green-50 text-green-800"
-                  } else if (index === selectedAnswer && selectedAnswer !== currentQuestion.correctAnswer) {
-                    buttonClass += "border-red-500 bg-red-50 text-red-800"
+                    buttonClass += "border-lime-500 bg-lime-50 text-lime-800";
+                  } else if (
+                    index === selectedAnswer &&
+                    selectedAnswer !== currentQuestion.correctAnswer
+                  ) {
+                    buttonClass += "border-red-500 bg-red-50 text-red-800";
                   } else {
-                    buttonClass += "border-gray-200 bg-gray-50 text-gray-600"
+                    buttonClass += "border-gray-200 bg-gray-50 text-gray-600";
                   }
                 } else if (selectedAnswer === index) {
-                  buttonClass += "border-blue-500 bg-blue-50 text-blue-800"
+                  buttonClass +=
+                    "border-orange-500 bg-orange-50 text-orange-800";
                 } else {
-                  buttonClass += "border-gray-200 bg-white text-gray-800 hover:border-blue-300 hover:bg-blue-50"
+                  buttonClass +=
+                    "border-gray-200 bg-white text-gray-800 hover:border-orange-300 hover:bg-orange-50";
                 }
 
                 return (
@@ -503,24 +552,34 @@ const QuizPage = () => {
                     disabled={showResult}
                   >
                     <div className="flex items-center">
-                      <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center mr-4 font-semibold ${
-                        showResult && index === currentQuestion.correctAnswer ? 'border-green-500 bg-green-500 text-white' :
-                        showResult && index === selectedAnswer && selectedAnswer !== currentQuestion.correctAnswer ? 'border-red-500 bg-red-500 text-white' :
-                        selectedAnswer === index ? 'border-blue-500 bg-blue-500 text-white' :
-                        'border-gray-300 text-gray-600'
-                      }`}>
+                      <div
+                        className={`w-8 h-8 rounded-full border-2 flex items-center justify-center mr-4 font-semibold ${
+                          showResult && index === currentQuestion.correctAnswer
+                            ? "border-lime-500 bg-lime-500 text-white"
+                            : showResult &&
+                              index === selectedAnswer &&
+                              selectedAnswer !== currentQuestion.correctAnswer
+                            ? "border-red-500 bg-red-500 text-white"
+                            : selectedAnswer === index
+                            ? "border-orange-500 bg-orange-500 text-white"
+                            : "border-gray-300 text-gray-600"
+                        }`}
+                      >
                         {String.fromCharCode(65 + index)}
                       </div>
                       <span className="font-medium">{option}</span>
-                      {showResult && index === currentQuestion.correctAnswer && (
-                        <CheckCircle className="w-5 h-5 text-green-600 ml-auto" />
-                      )}
-                      {showResult && index === selectedAnswer && selectedAnswer !== currentQuestion.correctAnswer && (
-                        <XCircle className="w-5 h-5 text-red-600 ml-auto" />
-                      )}
+                      {showResult &&
+                        index === currentQuestion.correctAnswer && (
+                          <CheckCircle className="w-5 h-5 text-lime-600 ml-auto" />
+                        )}
+                      {showResult &&
+                        index === selectedAnswer &&
+                        selectedAnswer !== currentQuestion.correctAnswer && (
+                          <XCircle className="w-5 h-5 text-red-600 ml-auto" />
+                        )}
                     </div>
                   </motion.button>
-                )
+                );
               })}
             </div>
 
@@ -529,7 +588,7 @@ const QuizPage = () => {
               {showResult && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
+                  animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
                   className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl"
@@ -537,8 +596,12 @@ const QuizPage = () => {
                   <div className="flex items-start space-x-3">
                     <Lightbulb className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-yellow-800 mb-1">Giải thích:</h3>
-                      <p className="text-yellow-700 leading-relaxed">{currentQuestion.explanation}</p>
+                      <h3 className="font-semibold text-yellow-800 mb-1">
+                        Giải thích:
+                      </h3>
+                      <p className="text-yellow-700 leading-relaxed">
+                        {currentQuestion.explanation}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
@@ -562,7 +625,7 @@ const QuizPage = () => {
             <button
               onClick={handleSubmitAnswer}
               disabled={selectedAnswer === null}
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-600 to-lime-600 text-white font-semibold rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
               <CheckCircle className="w-4 h-4 mr-2" />
               Xác nhận đáp án
@@ -570,16 +633,18 @@ const QuizPage = () => {
           ) : (
             <button
               onClick={handleNextQuestion}
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-lime-600 to-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
             >
-              {currentQuestionIndex + 1 === totalQuestions ? 'Hoàn thành' : 'Câu tiếp theo'}
+              {currentQuestionIndex + 1 === totalQuestions
+                ? "Hoàn thành"
+                : "Câu tiếp theo"}
               <ArrowRight className="w-4 h-4 ml-2" />
             </button>
           )}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default QuizPage
